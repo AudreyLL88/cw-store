@@ -22,10 +22,10 @@
                 Clothing
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Long Sleeves</a>
-                <a href="" class="dropdown-item">T-shirts</a>
-                <a href="" class="dropdown-item">Hoodies</a>
-                <a href="" class="dropdown-item">All Clothing</a>
+                <a href="{% url 'products' %}?category=longsleeves" class="dropdown-item">Long Sleeves</a>
+                <a href="{% url 'products' %}?category=tshirts" class="dropdown-item">T-shirts</a>
+                <a href="{% url 'products' %}?category=hoodies" class="dropdown-item">Hoodies</a>
+                <a href="{% url 'products' %}?category=longsleeves,tshirts,hoodies" class="dropdown-item">All Clothing</a>
             </div>
         </li>
 
@@ -34,9 +34,9 @@
                 Music
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="music-link">
-                <a href="" class="dropdown-item">Vinyls</a>
-                <a href="" class="dropdown-item">CDs</a>
-                <a href="" class="dropdown-item">Tapes</a>
+                <a href="{% url 'products' %}?category=vinyls" class="dropdown-item">Vinyls</a>
+                <a href="{% url 'products' %}?category=cds" class="dropdown-item">CDs</a>
+                <a href="{% url 'products' %}?category=tapes" class="dropdown-item">Tapes</a>
             </div>
         </li>
 
@@ -45,9 +45,9 @@
                 Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="accessory-link">
-                <a href="" class="dropdown-item">Jewelry/Pins</a>
-                <a href="" class="dropdown-item">Patches</a>
-                <a href="" class="dropdown-item">Other</a>
+                <a href="{% url 'products' %}?category=jewelry/pins" class="dropdown-item">Jewelry/Pins</a>
+                <a href="{% url 'products' %}?category=patches" class="dropdown-item">Patches</a>
+                <a href="{% url 'products' %}?category=other" class="dropdown-item">Other</a>
             </div>
         </li>
 

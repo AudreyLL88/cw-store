@@ -15,6 +15,7 @@
 
     {% block corecss %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -79,7 +80,7 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %} text-info font-weight-bold {% else %} text-full {% endif %} nav-link" href="{% url 'view_bag' %}">
+                        <a class="{% if grand_total %} text-info font-weight-bold {% else %} text-full {% endif %} nav-link" href="">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg nav__icon"></i></div>
                                 <p class="my-0">

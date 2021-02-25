@@ -35,8 +35,10 @@
     <title>Chelsea Wolfe Store {% block extra_title %} {% endblock %}</title>
   </head>
   <body>
+    <header class="container-fluid fixed-top"></header>
     
     {% if messages %}
+    <div class="message-container"></div>
    {% endif %}
 
    {% block page_header %}

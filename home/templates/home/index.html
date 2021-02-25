@@ -1,13 +1,28 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block page_header %}
-   
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
 {% endblock %}
 
 
 {% block content %}
 <main>
-   <h1 class="bg-warning">Hello</h1>
-        
+    <div class="home">
+        <div class="home__primary">
+            <h1 class="home__title">Birth of <br> Violence</h1>
+            <div class="home__img">
+                <img src="media/palette.jpg" alt="">
+                <a href="{% url 'products' %}" class="btn btn-lg btn__hero"> Visit the store</a>
+            </div>
+        </div>
+        <div class="home__secondary">
+            <span class="home__sub">Official <br>Store</span>
+        </div>
+    </div>
 </main>
 {% endblock %}

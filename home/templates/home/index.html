@@ -16,7 +16,7 @@
         <div class="home__primary">
             <h1 class="home__title">Birth of <br> Violence</h1>
             <div class="home__img">
-                <img src="" alt="">
+                <img src="media/palette.jpg" alt="">
                 <a href="{% url 'products' %}" class="btn btn-lg btn__hero"> Visit the store</a>
             </div>
         </div>
@@ -25,6 +25,141 @@
         </div>
     </div>
 </main>
+<section id="featured" class="col-10 offset-1 mb-5">
+   <div class="row text-center">
+       <div class=" col text-full text-center pt-5 pb-4 featured-title">
+            <h2>OUR LATEST PRODUCTS</h2>
+        </div>
+   </div>
+   <hr>
+   <div class="row featured-card">
+       <div class="col-sm-6 col-lg-4 col-xl-3 card__wrapper no-gutters">
+            <div class="box">
+                <div class="top__box">
+                    <img src="media/hiss_cd.jpg" alt="">
+                </div>
+                <div class="bottom">
+                    <div class="bottom__box">
+                        <div class="card__details">
+                            <h1 class="lead mb-0 text-left font-weight-bold">Hiss Spun</h1>
+                            <p class="lead mb-0 text-left font-weight-bold">25€</p>
+                            <p class="small mt-1 mb-0">
+                                <a class="text-muted" href="">
+                                    <i class="fas fa-tag mr-1 pb-2"></i>Record
+                                </a>
+                            </p>
+                        </div>
+                        <div class="card__icon">
+                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                <small class="text-muted">No Rating</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 col-xl-3 card__wrapper">
+            <div class="box">
+                <div class="top__box">
+                    <img src="media/hiss_cd.jpg" alt="">
+                </div>
+                <div class="bottom">
+                    <div class="bottom__box">
+                        <div class="card__details">
+                            <h1 class="lead mb-0 text-left font-weight-bold">Hiss Spun</h1>
+                            <p class="lead mb-0 text-left font-weight-bold">25€</p>
+                            <p class="small mt-1 mb-0">
+                                <a class="text-muted" href="">
+                                    <i class="fas fa-tag mr-1 pb-2"></i>Record
+                                </a>
+                            </p>
+                        </div>
+                        <div class="card__icon"><i class="fas fa-shopping-bag fa-lg"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 col-xl-3 card__wrapper">
+            <div class="box">
+                <div class="top__box">
+                    <img src="media/hiss_cd.jpg" alt="">
+                </div>
+                <div class="bottom">
+                    <div class="bottom__box">
+                        <div class="card__details">
+                            <h1 class="lead mb-0 text-left font-weight-bold">Hiss Spun</h1>
+                            <p class="lead mb-0 text-left font-weight-bold">25€</p>
+                            <p class="small mt-1 mb-0">
+                                <a class="text-muted" href="">
+                                    <i class="fas fa-tag mr-1 pb-2"></i>Record
+                                </a>
+                            </p>
+                        </div>
+                        <div class="card__icon"><i class="fas fa-shopping-bag fa-lg"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 col-xl-3 card__wrapper">
+            <div class="box">
+                <div class="top__box">
+                    <img src="media/hiss_cd.jpg" alt="">
+                </div>
+                <div class="bottom">
+                    <div class="bottom__box">
+                        <div class="card__details">
+                            <h1 class="lead mb-0 text-left font-weight-bold">Hiss Spun</h1>
+                            <p class="lead mb-0 text-left font-weight-bold">25€</p>
+                            <p class="small mt-1 mb-0">
+                                <a class="text-muted" href="">
+                                    <i class="fas fa-tag mr-1 pb-2"></i>Record
+                                </a>
+                            </p>
+                        </div>
+                        <div class="card__icon"><i class="fas fa-shopping-bag fa-lg"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>
+<section id="about">
+    <div class="home__about">     
+        <div class="media-about">
+            <img src="media/chelsea_header.jpg" alt="" class="about__img">
+        </div>
+        <div class="media-text  bg-clear">
+            <div class="text-center pb-5">
+                <h2 class="mt-5 mb-5 text-full">Discover Chelsea Wolfe</h2>
+                <p class="pr-3 text-full">
+                    Chelsea Joy Wolfe (born November 14, 1983) is an American singer-songwriter and musician. Her work has blended elements of 
+                    gothic rock, doom metal, and folk music. Raised in Northern California with a country musician father, Wolfe began writing 
+                    and recording songs during her childhood.
+                </p>     
+                <a href="https://open.spotify.com/artist/6ZK2nrW8aCTg8Bid7I7N10" target="_blank" class="mr-4  mt-4 text-center text-full media-icon"><i class="fab fa-spotify fa-3x"></i></a>
+                <a href="https://www.youtube.com/channel/UCjunnZq5ArgycpGBkOVLUMA" target="_blank" class=" mr-4 mt-4 text-center text-full media-icon"><i class="fab fa-youtube fa-3x"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="security" class="bg-light text-full no-gutters">
+    <div class="row text-center pt-5 pb-5 security__details">
+        <div class="col-lg-4 col-sm-12 pb-3 pt-3">
+            <i class="fas fa-credit-card fa-4x mb-2 mt-2 security__icons security-icon"></i>
+            <p class="security-text">BEST PRICE</p>
+            <small class="security-text">The only official store</small>
+        </div>
+        <div class="col-lg-4 col-sm-12 pb-3 pt-3">
+            <i class="fas fa-lock fa-4x mb-2 mt-2 security__icons security-icon"></i>
+            <p class="security-text">SECURE PAYMENT</p>
+            <small class="security-text">100% secure payment</small>
+        </div>
+        <div class="col-lg-4 col-sm-12 pb-3 pt-3">
+            <i class="fas fa-shipping-fast fa-4x mb-2 mt-2 security__icons security-icon"></i>
+            <p class="security-text">FREE SHIPPING</p>
+            <small class="security-text">Orders over $100</small>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block postloadjs %}

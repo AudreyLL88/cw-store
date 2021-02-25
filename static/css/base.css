@@ -223,6 +223,45 @@ p {
     color: transparent; 
 }
 
+/* ---- Landing page About section ---- */
+
+.home__about{
+  position: relative;
+  display: grid;
+  overflow: hidden;
+}
+
+.about__img{
+ object-fit: cover;
+ width: 100%;
+ height: 100%;
+}
+
+.media-text{
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: var(--white-color);
+    color: var(--white-color);
+}
+.text__box {
+    align-items: center;
+    justify-items: center;
+}
+
+.media-text h2 {
+    font-weight: bold;
+    font-family: 'Pirata One', cursive;
+    letter-spacing: 0.1em;
+}
+
+.media-text p{
+    line-height: 2.5;
+    font-weight: 500;
+}
+
+/* ---- Landing page Bottom Banner ---- */
+
+
 .bg-clear {
     background-color: var(--first-color);
 }

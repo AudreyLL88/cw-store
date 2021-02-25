@@ -26,3 +26,17 @@
     </div>
 </main>
 {% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript">
+
+    TweenMax.to(".home__primary", 2, {width: "100%", ease: Expo.easeInOut})
+    gsap.from('.home__title', {opacity: 0, duration: 2, delay: 1.5, y: 100})
+    gsap.from('.home__img img', {opacity: 0, duration: 2, delay:1.5, y: -100})
+    gsap.from('.btn__hero', {opacity: 0, duration: 2, delay:1.5, y: -100})
+
+    
+    TweenMax.to(".home__secondary", 2.5, {width: "100%",ease: Expo.easeInOut})
+    gsap.from('.home__sub', {opacity: -1, duration: 1.5, delay: 1.5, x: 100})
+</script>
+{% endblock %}

@@ -1,0 +1,249 @@
+[
+  {
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+      "sku": "0000001",
+      "name": "CLOAK LONGSLEEVE",
+      "description": "Design by Ryan Patterson. Black Gildan 100% Cotton",
+      "price": 34.90,
+      "category": 1,
+      "image_url": "https://cdn.shopify.com/s/files/1/2244/7843/products/CHELSEAWOLFE-Cloak-LS-F_400x.jpg?v=1596395405",
+      "image": "cloack_longsleeve.png"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+      "sku": "0000002",
+      "name": "MATTISSON LONGSLEEVE",
+      "description": "Black Gildan 100% Cotton",
+      "price": 34.90,
+      "category": 1,
+      "image_url": "https://cdn.shopify.com/s/files/1/2244/7843/products/CHELSEAWOLFE-Mattisson-LS-F_2000x.jpg?v=1584376388",
+      "image": "cw_longsleeve.png"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+      "sku": "0000003",
+      "name": "Abyss World Tour T-shirt",
+      "description": "Black Gildan 100% Cotton",
+      "price": 22.00,
+      "category": 2,
+      "image_url": "https://cdn.shopify.com/s/files/1/0015/2602/products/CW_AT_FRONT.png?v=1596226433",
+      "image": "abyss_tee.png"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.product",
+    "fields": {
+      "sku": "0000004",
+      "name": "BLADES T-shirt",
+      "description": "White Gildan 100% cotton.",
+      "price": 22.00,
+      "category": 2,
+      "image_url": "https://cdn.shopify.com/s/files/1/0015/2602/products/CW_BLADES_WHITE_T.png?v=1571263155",
+      "image": "blade_tee.png"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.product",
+    "fields": {
+      "sku": "0000005",
+      "name": "Birth of Violence T-shirt",
+      "description": "Black Gildan 100% cotton",
+      "price": 22.00,
+      "category": 2,
+      "image_url": "https://cdn.shopify.com/s/files/1/0015/2602/products/CW_BOV_BLACK_T.png?v=1571263266",
+      "image": "chelsea_tee.png"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.product",
+    "fields": {
+      "sku": "0000006",
+      "name": "Blades Pullover Hoodie",
+      "description": "Black Gildan 100% cotton.",
+      "price": 40.00,
+      "category": 3,
+      "image_url": "https://cdn.shopify.com/s/files/1/0015/2602/products/ChelseaWolfeHoodie.png?v=1596574676",
+      "image": "dagger_hoodie.png"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.product",
+    "fields": {
+      "sku": "0000007",
+      "name": "Skull Zip Hoodie",
+      "description": "Black Gildan 100% cotton.",
+      "price": 40.00,
+      "category": 3,
+      "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0226201317034754M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+      "image": "cw_hoodie.png"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.product",
+    "fields": {
+      "sku": "0000008",
+      "name": "Birth of Violence Vinyl 12inches",
+      "description": "12inches Gatefold Vinyl with 12 page booklet and Digital Download Card included! Vinyl mockups and actual vinyl color may vary.",
+      "price": 21.99,
+      "category": 4,
+      "image_url": "https://cdn.shopify.com/s/files/1/0015/2602/products/CW_BOV_VINYL.png?v=1613588057",
+      "image": "bbov.png"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.product",
+    "fields": {
+      "sku": "0000009",
+      "name": "Abyss vinyl 12inches",
+      "description": "12'' Black Double Vinyl or Silver/Black Double Vinyl. Includes download card with bonus track!",
+      "price": 29.99,
+      "category": 4,
+      "image_url": "https://cdn.shopify.com/s/files/1/0015/2602/products/bg_abyss.png?v=1596774522",
+      "image": "abyss_vinyl.png"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "products.product",
+    "fields": {
+      "sku": "00000010",
+      "name": "HISS SPUN vinyl 12inches",
+      "description": "12'' Black Double Vinyl or Silver/Black Double Vinyl. Includes download card with bonus track!",
+      "price": 33.99,
+      "category": 4,
+      "image_url": "https://www.bengans.se/bilder/artiklar/2519873.jpg?m=1517551929",
+      "image": "hiss_vinyl.jpg"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "products.product",
+    "fields": {
+      "sku": "00000011",
+      "name": "Abyss CD",
+      "description": "CD with 12 page booklet!",
+      "price": 11.99,
+      "category": 5,
+      "image_url": "https://cdn.shopify.com/s/files/1/0015/2602/products/COVER.jpg?v=1571262598",
+      "image": "abyss_cd.png"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "products.product",
+    "fields": {
+      "sku": "00000012",
+      "name": "Birth of Violence CD",
+      "description": "CD with 12 page booklet!",
+      "price": 11.99,
+      "category": 5,
+      "image_url": "https://cdn.shopify.com/s/files/1/0015/2602/products/CW_BOV_CD_a2c11877-b56f-42d0-a4e9-46d2da739e06.png?v=1571263267",
+      "image": "bov_cd.png"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "products.product",
+    "fields": {
+      "sku": "00000013",
+      "name": "HISS SPUN CD",
+      "description": "Digipak CD.",
+      "price": 11.99,
+      "category": 5,
+      "image_url": "https://cdn.shopify.com/s/files/1/0015/2602/products/CD_HISSSPUN.jpg?v=1571262811",
+      "image": "hiss_cd.jpg"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "products.product",
+    "fields": {
+      "sku": "00000014",
+      "name": "Pain is Beauty CD",
+      "description": "4 panel digipack with 20 page lyric booklet.",
+      "price": 26.99,
+      "category": 5,
+      "image_url": "https://cdn.shopify.com/s/files/1/0015/2602/products/cw0cover_3.jpg?v=1571262544",
+      "image": "pain_cd.jpg"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "products.product",
+    "fields": {
+      "sku": "00000015",
+      "name": "Birth of Violence Patch",
+      "description": "Soft cotton patch, 3.5' Round",
+      "price": 9.90,
+      "category": 8,
+      "image_url": "https://cdn.shopify.com/s/files/1/0015/2602/products/CW_BOV_PATCHES_COMBO.png?v=1571263267",
+      "image": "cw_patch.jpg"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "products.product",
+    "fields": {
+      "sku": "00000016",
+      "name": "Birth of Violence Pins",
+      "description": "Set of 3 engraved enamel pins",
+      "price": 18.00,
+      "category": 7,
+      "image_url": "https://cdn.shopify.com/s/files/1/0015/2602/products/CW_PINS.png?v=1571263267",
+      "image": "four_pins.jpg"
+    }
+  },
+  {
+    "pk": 17,
+    "model": "products.product",
+    "fields": {
+      "sku": "00000017",
+      "name": "Emblem Pin",
+      "description": "Approximately 1''",
+      "price": 9.60,
+      "category": 7,
+      "image_url": "https://cdn.shopify.com/s/files/1/0015/2602/products/PIN_EMBLEM.jpg?v=1571262812",
+      "image": "DP1119201520340305C.jpg"
+    }
+  },
+  {
+    "pk": 18,
+    "model": "products.product",
+    "fields": {
+      "sku": "00000018",
+      "name": "Crying Face Mask",
+      "description": "One size fits most! Disclaimer: The face cover should not be used (1) in any surgical setting or to provide liquid barrier protection; (2) in a clinical setting where the infection risk level through inhalation exposure is high; (3) for particulate filtration; or (4) in high risk aerosol generating procedures.",
+      "price": 15.00,
+      "category": 9,
+      "image_url": "https://cdn.shopify.com/s/files/1/0015/2602/products/CW_Abyss.png?v=1600272318",
+      "image": "abyss_mask.png"
+    }
+  },
+  {
+    "pk": 19,
+    "model": "products.product",
+    "fields": {
+      "sku": "00000019",
+      "name": "Chelsea Wolfe Socks",
+      "description": "Classic black Chelsea Wolfe Logo Socks.  One size fits most!",
+      "price": 15.00,
+      "category": 9,
+      "image_url": "http://s7d2.scene7.com/is/image/JCPenney/DP0807201317072924M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
+      "image": "cw_socks.png"
+    }
+  }
+]

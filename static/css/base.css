@@ -122,6 +122,18 @@ p {
     color: var(--white-color);
 }
 
+.btn-clear{
+    color: var(--second-color);
+    background-color:var(--white-color);
+    border: 1px solid var(--second-color);
+}
+
+.btn-clear:hover{
+    color: var(--white-color);
+    background-color:var(--second-color);
+    border: 1px solid var(--second-color);
+}
+
 .text-full {
     color: var(--second-color);
 }

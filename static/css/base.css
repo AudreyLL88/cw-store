@@ -134,23 +134,6 @@ p {
     background: var(--second-color);
 }
 
-.btt-button {
-    height:42px;
-    width: 42px;
-    border-radius: 50%;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    background: var(--second-color);
-}
-.btt-button:hover{
-    background: var(--first-color);
-}
-
-.btt-link{
-    cursor: pointer;
-}
-
 .nav-link:hover{
     color: var(--first-color);
 }
@@ -330,6 +313,30 @@ p {
     padding: 20px;
     margin-bottom: 15px;
     width: calc(70%);
+}
+
+/*------ Product Page ------*/
+
+a.category-badge > span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
+}
+
+.btt-button {
+    height:42px;
+    width: 42px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: var(--second-color);
+}
+.btt-button:hover{
+    background: var(--first-color);
+}
+
+.btt-link{
+    cursor: pointer;
 }
 
 /* ----- Media Queries ------- */

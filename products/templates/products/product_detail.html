@@ -39,13 +39,13 @@
                 <div class="form-row size">
                     {% with product.size as s %}
                         {% if s %}
-                                <div class="col-12">
-                                    <p><strong>Select Size:</strong></p>
-                                    <select class="form-control rounded-0 w-100 w-sm-50" name="size" id="id_size">
-                                        {% for choice in product.size %}
-                                            <option value="{{ choice }}">{{ choice }}</option>
-                                        {% endfor %}
-                                    </select>
+                            <div class="col-12">
+                                <p><strong>Select Size:</strong></p>
+                                <select class="form-control rounded-0 w-100 w-sm-50" name="size" id="id_size">
+                                    {% for choice in product.size %}
+                                        <option value="{{ choice }}">{{ choice }}</option>
+                                    {% endfor %}
+                                </select>
                             </div>
                         {% endif %}
                     {% endwith %}

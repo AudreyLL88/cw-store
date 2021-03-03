@@ -10,7 +10,6 @@ import stripe
 @csrf_exempt
 def webhook(request):
     """Listen for webhooks from Stripe"""
-
     # Setup
     wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -22,8 +21,8 @@ def webhook(request):
 
     try:
         event = stripe.Webhook.construct_event(
-            payload, sig_header, wh_secret
-        )
+            payload, sig_header, wh_secret)
+
     except ValueError as e:
         # Invalid payload
         return HttpResponse(status=400)
@@ -46,6 +45,7 @@ def webhook(request):
     # Get the webhook type from Stripe
     event_type = event['type']
 
+    # If there's a handler for it, get it from the event map
     # Use the generic one by default
     event_handler = event_map.get(event_type, handler.handle_event)
 

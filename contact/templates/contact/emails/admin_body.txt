@@ -1,0 +1,12 @@
+Hi,
+
+{{ first_name }} {{last_name}} sent you a message on The Chelsea Wolfe Store. Please answer at this email:{{ sender_email }} or contact them by phone at:{{ phone_number }}.
+
+Here is what they said:
+Subject: {{ subject }}
+Their message: {{ your_message }}
+
+
+Best,
+
+The Chelsea Wolfe Store

@@ -30,6 +30,12 @@
                 <p class="info-description">
                     {{ product.description }}
                 </p>
+                {% if request.user.is_superuser %}
+                    <small>
+                        <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                    </small>
+                {% endif %}
             </div>
 
             <!-- PRICE -->
@@ -85,7 +91,7 @@
             </div>
             {% if product.qty > 0 %}                 
                 <div class="col{% if s %}-12 mt-2{% endif %} pb-5 price-button">
-                    <a href="{% url 'products' %}" class="btn btn-clear mt-5">
+                    <a href="{% url 'products' %}" class="btn btn-clear rounded-0 mt-5">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>

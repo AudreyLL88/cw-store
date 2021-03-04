@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpR
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.contrib.auth.models import User
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
@@ -11,6 +14,28 @@ from bag.contexts import bag_contents
 
 import stripe
 import json
+
+
+def _send_alert_email(product):
+    """Send the user a confirmation email"""
+
+    superusers = User.objects.filter(is_superuser=True).values_list('email')
+    print(superusers)
+    subject = render_to_string(
+        'checkout/admin_email_alerts/admin_email_alert_subject.txt',
+        {'product': product})
+    print(subject)
+    body = render_to_string(
+        'checkout/admin_email_alerts/admin_email_alert_body.txt',
+        {'product': product, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+    print(body)
+
+    send_mail(
+        subject,
+        body,
+        settings.DEFAULT_FROM_EMAIL,
+        superusers
+    )
 
 
 @require_POST
@@ -147,6 +172,8 @@ def checkout_success(request, order_number):
         sku = str('000000' + item)
         product = get_object_or_404(Product, sku=sku)
         product.qty -= items[item]
+        if product.qty <= 3:
+            _send_alert_email(product)
         product.save()
 
     if request.user.is_authenticated:

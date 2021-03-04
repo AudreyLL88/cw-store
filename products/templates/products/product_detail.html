@@ -102,7 +102,57 @@
             {% endif %}                           
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
-        </div>              
+        </div> 
+        <div class="container">
+            <div class="col-md-12">
+                <div class="bg-white rounded shadow-sm p-4 mb-4 clearfix">
+                    <h5 class="mb-0 mb-4 review-header">Ratings and Reviews</h5>
+                    <div class="row align-items-start">
+                        <div class="col-lg-4 col-sm-12 review-total">
+                            <b class="text-black">{{ product.reviews.count }}</b>
+                            <p>total review</p>
+                        </div>
+                        <div class="col-lg-4 col-sm-12 review-average">
+                            {% if product.reviews.count > 0 %}
+                                <p>{{ average_rating }} /5 <i class="far fa-star"></i></p>
+                            {% else %}
+                                <p>{{ average_rating }}</p>
+                            {% endif %}
+                        </div>
+                            <div class="col-lg-4 col-sm-12 review-btn-up">
+                                <a href="{% url 'review_product' product.id %}" type="button" class="btn btn-lg btn-clear">write a review</a>
+                            </div>
+                        </div>
+                        </div>
+                            <div class="bg-white rounded shadow-sm p-4 mb-4 ">
+                                 <h5 class="mb-1 review-title-detail">Customer's reviews</h5>
+                                <div class=" pt-4 pb-4">
+                                    {% if product.reviews.count > 0 %}
+                                        {% for review in product.reviews.all %}
+                                            <div class="row align-items-start review-detail">
+                                                <div class="col-4">
+                                                    <h6 class="mb-1">{{ review.reviewer }}</h6>
+                                                    <p class="text-gray">{{ review.date }}</p>
+                                                    <p class="text-gray">France</p>
+                                                </div>
+                                                <div class="col-8">
+                                                    <h4 class="mb-3">
+                                                        {{ review.rating }}
+                                                    </h4>
+                                                    <div class="">
+                                                        <p>{{ review.review }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                {% else %}
+                                    <p>No product reviews.</p>
+                                {% endif %}
+                                <hr>
+                            </div>
+                        </div>
+                    </div>            
     </div>
 </main>
 {% endblock %}

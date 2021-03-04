@@ -36,7 +36,9 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+
 INTEGER_CHOICES = [tuple([x, x]) for x in range(1, 6)]
+
 
 class Review(models.Model):
     """Add a product review in database."""

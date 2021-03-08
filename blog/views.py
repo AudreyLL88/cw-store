@@ -46,7 +46,7 @@ def add_blogpost(request):
 
 
 def blog_detail(request, blogpost_id):
-    """ A view to show individual product details """
+    """ A view to show individual blog details """
 
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
 
@@ -59,7 +59,7 @@ def blog_detail(request, blogpost_id):
 
 @login_required
 def edit_blogpost(request, blogpost_id):
-    """ Edit a product in the store """
+    """ Edit a blog post """
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -85,3 +85,17 @@ def edit_blogpost(request, blogpost_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_blogpost(request, blogpost_id):
+    """ Delete Blog post forever"""
+
+    blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
+
+    if request.user == blogpost.author:
+        blogpost.delete()
+        return redirect(reverse('blog'))
+    else:
+        messages.error(request, 'You cannot do that !')
+        return redirect(reverse('blog'))

@@ -1,3 +1,4 @@
+import random
 from django.shortcuts import redirect, reverse, render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -66,6 +67,18 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product)
+    category = product.category
+    suggestions = Product.objects.filter(category=category)
+    suggested_products = list(suggestions)
+
+    # removes current product from suggested products
+    for i, item in enumerate(suggested_products):
+        if item == product:
+            suggested_products.pop(i)
+            break
+
+    # pick 3 random from suggested list
+    suggested_products = random.sample(suggested_products, min(len(suggested_products), 3))
 
     if len(reviews) > 0:
         average_rating = 0
@@ -80,6 +93,7 @@ def product_detail(request, product_id):
         'product': product,
         'reviews': reviews,
         'average_rating': average_rating,
+        'suggested_products': suggested_products,
     }
 
     return render(request, 'products/product_detail.html', context)

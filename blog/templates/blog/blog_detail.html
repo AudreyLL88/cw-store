@@ -13,9 +13,14 @@
 <main class="container pt-5">
     <div class="row">
         <div class="col-sm-12 col-md-6">
-            <div>
-                <img class="item-img" src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" />              
+            {% if product.image %}
+                    <img class="item-img" src="{{ product.image.url }}" alt="{{ product.name }}" />              
             </div>
+                {% else %}
+                    <a href="">
+                        <img class="item" src="{{ MEDIA_URL }}cw_red.png" alt="{{ product.name }}">
+                    </a>
+                {% endif %}
         </div>
         <div class="col-sm-12 col-md-6 info">
             <h2>{{ blogpost.blog_title }}</h2>

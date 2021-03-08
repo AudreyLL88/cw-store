@@ -31,9 +31,15 @@
                             </h2>
                         </header>
                         <div class="">
-                            <a href="{% url 'blog_detail' blogpost.id %}">
-                                <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="img-fluid" />
-                            </a>
+                            {% if product.image %}
+                                <a href="{% url 'blog_detail' blogpost.id %}">
+                                    <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="img-fluid" />
+                                </a>
+                            {% else %}
+                                <a href="{% url 'blog_detail' blogpost.id %}">
+                                    <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="img-fluid" />
+                                </a>
+                            {% endif %}
                             <p class="text-full">{{ blogpost.blog_content}} &hellip;</p>
                             <a href="{% url 'blog_detail' blogpost.id %}" class="btn btn-full text-full">Read More</a>
                         </div>

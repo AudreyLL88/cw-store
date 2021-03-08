@@ -1,5 +1,5 @@
 from django import forms
-from products.widgets import CustomClearableFileInput
+from .widgets import CustomClearableFileInput
 from .models import BlogPost
 
 
@@ -13,3 +13,5 @@ class BlogForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'border-full rounded-0'

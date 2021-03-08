@@ -26,8 +26,8 @@
             <h2>{{ blogpost.blog_title }}</h2>
             {% if request.user.is_superuser %}
                 <small>
-                    <a href="#">Edit</a> | 
-                    <a class="text-danger" href="{#">Delete</a>
+                    <a href="{% url 'edit_blogpost' blogpost.id %}">Edit</a> | 
+                    <a class="text-danger" href="#">Delete</a>
                 </small>
             {% endif %}
             <p>{{ blogpost.blog_content }}</p>

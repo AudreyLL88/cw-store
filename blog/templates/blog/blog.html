@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-12">
                     <article id="">
                         {% for blogpost in blogposts %}
                         <header>
@@ -31,7 +31,7 @@
                             </h2>
                         </header>
                         <div class="">
-                            {% if product.image %}
+                            {% if blogpost.image %}
                                 <a href="{% url 'blog_detail' blogpost.id %}">
                                     <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="img-fluid" />
                                 </a>

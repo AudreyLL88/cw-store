@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import BlogForm, CommentForm
-from .models import BlogPost
+from .models import BlogPost, BlogComment
 
 # Create your views here.
 
@@ -103,7 +103,8 @@ def delete_blogpost(request, blogpost_id):
 
 @login_required
 def blog_comment(request, blogpost_id):
-    """ Allows user to add a review """
+    """ Allows user to add a comment """
+
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
 
     if request.method == 'POST':
@@ -128,3 +129,18 @@ def blog_comment(request, blogpost_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_comment(request, comment_id):
+    """ Delete comment forever"""
+
+    comment = get_object_or_404(BlogComment, pk=comment_id)
+
+    if request.user == comment.comment_user:
+        comment.delete()
+        messages.success(request, 'Your comment is deleted !')
+        return redirect(reverse('blog'))
+    else:
+        messages.error(request, 'You cannot do that !')
+        return redirect(reverse('blog'))

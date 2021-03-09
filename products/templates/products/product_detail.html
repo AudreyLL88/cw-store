@@ -12,6 +12,8 @@
 {% block content %}
 <main class="container pt-5">
     <div class="row">
+
+         <!-- Image -->
         <div class="col-sm-12 col-md-6">
             <div>
                 {% if product.image %}
@@ -23,6 +25,8 @@
                     </a>
                 {% endif %}
         </div>
+
+        <!-- Product infos and admin functionnalities -->
         <div class="col-sm-12 col-md-6 info">
             <div class="item-info text-full">
                 <span class="info-category">{{ product.category.friendly_name }}</span>
@@ -38,8 +42,10 @@
                 {% endif %}
             </div>
 
-            <!-- PRICE -->
+            <!-- Price -->
             <span class="price-title ">${{ product.price }}</span>
+
+             <!-- Size and Quantity -->
             <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                 {% csrf_token %}
                 <div class="form-row size">
@@ -89,6 +95,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Buttons -->
             {% if product.qty > 0 %}                 
                 <div class="col{% if s %}-12 mt-2{% endif %} pb-5 price-button">
                     <a href="{% url 'products' %}" class="btn btn-clear rounded-0 mt-5">
@@ -102,7 +110,9 @@
             {% endif %}                           
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
-        </div> 
+        </div>
+
+        <!-- Review section -->
         <div class="container">
             <div class="col-md-12">
                 <div class="bg-white rounded shadow-sm p-4 mb-4 clearfix">
@@ -151,6 +161,8 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                     <!-- Delete review modal -->
                                     <div class="modal fade" id="deleteReview-{{ review.id }}" tabindex="-1" aria-labelledby="deleteLabel-{{ review.id }}" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -178,6 +190,7 @@
                         </div>
                     </div>
         </div>
+
         <!-- Suggestions --> 
             <article class="row">
                 <div class="col-sm-12 text-center text-full">

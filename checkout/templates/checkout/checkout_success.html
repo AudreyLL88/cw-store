@@ -16,6 +16,8 @@
 {% block content %}
     <div class="overlay"></div>
     <div class="container">
+
+        <!-- Order confirmation infos -->
         <div class="row">
             <div class="col text-center">
                 <hr>
@@ -28,6 +30,7 @@
             </div>
         </div>
 
+        <!-- Order content infos -->
         <div class="row">
             <div class="col-12 col-lg-6">
                 <div class="order-confirmation-wrapper p-2 border text-full">                   
@@ -46,6 +49,8 @@
                     <p class="mb-0">Grand Total: {{ order.grand_total }}</p>
                 </div>
             </div>
+
+            <!-- Order shipping infos -->
             <div class="col-12 col-lg-6">
                 <div class="order-confirmation-wrapper p-2 border text-full">                   
                     <small class="text-muted">Shipping adress:</small>
@@ -64,17 +69,17 @@
                     <p class="mb-0">{{ order.phone_number }}</p>
                 </div>
             </div>               
-        </div>   
+        </div>
+        
+        <!-- Buttons -->
         <div class="row">
 			<div class="col-12 text-right mt-3">
-				
-                    <a href="" class="btn btn-full text-full rounded-0 my-2">
-                        <span class="icon mr-2">
-                            <i class="fas fa-angle-left"></i>
-                        </span>
-                        <span class="text-uppercase">Back to Profile</span>
-                    </a>
-                
+                <a href="{% url 'profile' %}" class="btn btn-full text-full rounded-0 my-2">
+                    <span class="icon mr-2">
+                        <i class="fas fa-angle-left"></i>
+                    </span>
+                    <span class="text-uppercase">Back to Profile</span>
+                </a>  
 			</div>
 		</div>
     </div>

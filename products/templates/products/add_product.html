@@ -14,7 +14,7 @@
     <div class="container">
 
         <!-- Header -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-center product-add-header">
             <div class="col-12 col-md-6 ">
                 <hr>
                 <h2 class="logo-font mb-4 text-full text-center">Product Management</h2>
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Form -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-center product-add-form">
             <div class="col-12 col-md-6">
                 <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -55,4 +55,14 @@
             $('#filename').text(`Image will be set to: ${file.name}`);
         });
     </script>
+    <script type="text/javascript">
+        const sr = ScrollReveal({
+        origin: 'top',
+        distance: '80px',
+        duration: 2000,
+        reset: true
+    })
+    sr.reveal('.product-add-header', {delay: 400})
+    sr.reveal('.product-add-form', {delay: 600, interval: 200})
+</script>
 {% endblock %} 

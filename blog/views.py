@@ -144,3 +144,33 @@ def delete_comment(request, comment_id):
     else:
         messages.error(request, 'You cannot do that !')
         return redirect(reverse('blog'))
+
+
+@login_required
+def edit_comment(request, comment_id):
+    """ Allows user to edit a comment"""
+
+    comment = get_object_or_404(BlogComment, pk=comment_id)
+    if request.user == comment.comment_user:
+        if request.method == 'POST':
+            form = CommentForm(request.POST, instance=comment)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Your comment is successfully edited')
+                return redirect(reverse('blog'))
+            else:
+                messages.error(request,
+                               'Failed to edit your comment. \
+                                Please ensure the form is valid.')
+        else:
+            form = CommentForm(instance=comment)
+        template = 'blog/edit_comment.html'
+        context = {
+            'form': form,
+            'comment': comment,
+        }
+
+        return render(request, template, context)
+    else:
+        messages.error(request, 'You cannot do that !')
+        return redirect(reverse('blog'))

@@ -1,6 +1,6 @@
 from django import forms
 from .widgets import CustomClearableFileInput
-from .models import BlogPost
+from .models import BlogPost, BlogComment
 
 
 class BlogForm(forms.ModelForm):
@@ -15,3 +15,13 @@ class BlogForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-full rounded-0'
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        # which model and which fields
+        model = BlogComment
+        fields = (
+            'comment_title',
+            'comment',
+            )

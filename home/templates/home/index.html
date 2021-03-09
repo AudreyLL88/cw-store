@@ -11,22 +11,34 @@
 
 
 {% block content %}
+
+<!-- Hero animation -->
 <main>
     <div class="home">
+
+        <!-- Panel 1 -->
         <div class="home__primary">
             <h1 class="home__title">Birth of <br> Violence</h1>
             <div class="home__img">
                 <img src="media/palette.jpg" alt="">
+
+                <!-- CTA button -->
                 <a href="{% url 'products' %}" class="btn btn-lg btn__hero"> Visit the store</a>
             </div>
         </div>
+
+        <!-- Panel 2 -->
         <div class="home__secondary">
             <span class="home__sub">Official <br>Store</span>
         </div>
     </div>
 </main>
+
+<!-- Featured product section -->
 <section id="featured" class="col-10 offset-1 mb-5">
    <div class="row text-center">
+
+        <!-- Header-->
        <div class=" col text-full text-center pt-5 pb-4 featured-title">
             <h2>OUR LATEST PRODUCTS</h2>
         </div>
@@ -36,6 +48,8 @@
        {% for suggested_product in suggested_products %}
             <div class="col-sm-6 col-lg-4 col-xl-3 card__wrapper">
                 <div class="box">
+
+                    <!-- Card Image -->
                     <div class="top__box">
                         {% if suggested_product.image %}
                             <a href="{% url 'product_detail' suggested_product.id %}">
@@ -47,6 +61,8 @@
                             </a>
                         {% endif %}
                     </div>
+
+                    <!-- Card infos -->
                     <div class="bottom pb-4">
                         <div class="bottom__box">
                             <div class="card__details">
@@ -67,11 +83,17 @@
         {% endfor %}
     </div> 
 </section>
+
+<!-- About Chelsea section -->
 <section id="about">
-    <div class="home__about">     
+    <div class="home__about"> 
+        
+        <!-- Image -->
         <div class="media-about">
             <img src="media/chelsea_header.jpg" alt="" class="about__img">
         </div>
+
+        <!-- Content -->
         <div class="media-text  bg-clear">
             <div class="text-center pb-5">
                 <h2 class="mt-5 mb-5 text-full">Discover Chelsea Wolfe</h2>
@@ -79,25 +101,34 @@
                     Chelsea Joy Wolfe (born November 14, 1983) is an American singer-songwriter and musician. Her work has blended elements of 
                     gothic rock, doom metal, and folk music. Raised in Northern California with a country musician father, Wolfe began writing 
                     and recording songs during her childhood.
-                </p>     
+                </p>
+                <!-- Links -->    
                 <a href="https://open.spotify.com/artist/6ZK2nrW8aCTg8Bid7I7N10" target="_blank" class="mr-4  mt-4 text-center text-full media-icon"><i class="fab fa-spotify fa-3x"></i></a>
                 <a href="https://www.youtube.com/channel/UCjunnZq5ArgycpGBkOVLUMA" target="_blank" class=" mr-4 mt-4 text-center text-full media-icon"><i class="fab fa-youtube fa-3x"></i></a>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Security section -->
 <section id="security" class="bg-light text-full no-gutters">
     <div class="row text-center pt-5 pb-5 security__details">
+
+        <!-- Price -->
         <div class="col-lg-4 col-sm-12 pb-3 pt-3">
             <i class="fas fa-credit-card fa-4x mb-2 mt-2 security__icons security-icon"></i>
             <p class="security-text">BEST PRICE</p>
             <small class="security-text">The only official store</small>
         </div>
+
+        <!-- Payment -->
         <div class="col-lg-4 col-sm-12 pb-3 pt-3">
             <i class="fas fa-lock fa-4x mb-2 mt-2 security__icons security-icon"></i>
             <p class="security-text">SECURE PAYMENT</p>
             <small class="security-text">100% secure payment</small>
         </div>
+
+        <!-- Shipping -->
         <div class="col-lg-4 col-sm-12 pb-3 pt-3">
             <i class="fas fa-shipping-fast fa-4x mb-2 mt-2 security__icons security-icon"></i>
             <p class="security-text">FREE SHIPPING</p>
@@ -110,6 +141,7 @@
 {% block postloadjs %}
 <script type="text/javascript">
 
+    /*GSAP HERO*/
     TweenMax.to(".home__primary", 2, {width: "100%", ease: Expo.easeInOut})
     gsap.from('.home__title', {opacity: 0, duration: 2, delay: 1.5, y: 100})
     gsap.from('.home__img img', {opacity: 0, duration: 2, delay:1.5, y: -100})

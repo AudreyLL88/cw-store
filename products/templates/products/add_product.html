@@ -12,16 +12,19 @@
 {% block content %}
     <div class="overlay"></div>
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6">
+
+        <!-- Header -->
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 ">
                 <hr>
-                <h2 class="logo-font mb-4 text-full">Product Management</h2>
-                <h5 class="text-muted">Add a Product</h5>
+                <h2 class="logo-font mb-4 text-full text-center">Product Management</h2>
+                <h5 class="text-muted text-center">Add a Product</h5>
                 <hr>
             </div>
         </div>
 
-        <div class="row">
+        <!-- Form -->
+        <div class="row justify-content-center">
             <div class="col-12 col-md-6">
                 <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -32,6 +35,8 @@
                             {{ field }}
                         {% endif %}
                     {% endfor %}
+
+                     <!-- Buttons -->
                     <div class="text-right">
                         <a class="btn btn-clear rounded-0" href="{% url 'products' %}">Cancel</a>
                         <button class="btn btn-full text-full rounded-0" type="submit">Add Product</button>

@@ -1,7 +1,12 @@
 from django.contrib import admin
-from .models import BlogPost
+from .models import BlogPost, BlogComment
 
 # Register your models here.
+
+
+class BlogCommentInline(admin.TabularInline):
+    """ Allows view/edit of reviews from Product detail page """
+    model = BlogComment
 
 
 class BlogAdmin(admin.ModelAdmin):
@@ -13,5 +18,20 @@ class BlogAdmin(admin.ModelAdmin):
         'date'
     )
 
+    inlines = [
+        BlogCommentInline,
+    ]
+
+
+class BlogCommentAdmin(admin.ModelAdmin):
+    """ Creates the admin interface for Product Reviews """
+    list_display = (
+        'comment_title',
+        'comment',
+        'blogpost',
+        'comment_user'
+    )
+
 
 admin.site.register(BlogPost, BlogAdmin)
+admin.site.register(BlogComment, BlogCommentAdmin)

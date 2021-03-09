@@ -398,7 +398,10 @@ p {
 
 .all-products .col-sm-12, 
 .all-products .col-lg-4, 
-.all-products .col-xl-3{
+.all-products .col-xl-3
+.featured-card .col-sm-12, 
+.featured-card .col-lg-4, 
+.featured-card .col-xl-3{
     padding: 0;
 }
 

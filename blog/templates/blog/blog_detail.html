@@ -140,6 +140,8 @@
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
+
+/* GSAP blog post */
 gsap.from(".blog-title", { opacity: 0, duration: 1, delay: 1.5, x: -100 });
 gsap.from(".blog-author", { opacity: 0, duration: 1, delay: 2.5, y: -50 });
 gsap.from(".blog-date", { opacity: 0, duration: 1, delay: 3, x: -100 });
@@ -154,7 +156,7 @@ gsap.from(".blog-content", { opacity: 0, duration: 1, delay: 3.5, y: 50 });
     reset: true
 })
 
-/*SCROLL Review*/
+/* SCROLL Comments */
 sr.reveal('.comment-header', {delay: 200})
 sr.reveal('.comment-total', {delay: 300})
 sr.reveal('.comment-average', {delay: 400})

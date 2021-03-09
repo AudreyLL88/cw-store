@@ -9,28 +9,33 @@
 {% endblock %}
 
 {% block content %}
-
     <div class="overlay"></div>
-        <div class="container pt-5">
-            <div class="row">
-                <div class="col text-center mt-3">
-                    <h2 class="logo-font">All Blog Posts</h2>
-                    <hr class="w-50 mb-3">
-                </div>
+    <div class="container pt-5">
+
+        <!-- Header -->
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font text-full">All Blog Posts</h2>
+                <hr class="w-50 mb-3">
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <article id="">
-                        {% for blogpost in blogposts %}
+        </div>
+
+        <!-- Post info -->
+        <div class="row">
+            <div class="col-12">
+                <article id="blog-post">
+                    {% for blogpost in blogposts %}
                         <header>
-                            <div class="meta text*full">
+                            <div class="meta text-full">
                                 Written by <span class="author">{{ blogpost.author }}</span> <span class="date">{{ blogpost.date }}</span>
                             </div>
                             <h2>
                                 <a href="" class="text-full">{{ blogpost.blog_title }}</a>
                             </h2>
                         </header>
-                        <div class="">
+
+                        <!-- Post info -->
+                        <div class="blog-img">
                             {% if blogpost.image %}
                                 <a href="{% url 'blog_detail' blogpost.id %}">
                                     <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="img-fluid" />
@@ -40,14 +45,18 @@
                                     <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="img-fluid" />
                                 </a>
                             {% endif %}
+
+                            <!-- Content preview -->
                             <p class="text-full">{{ blogpost.blog_content}} &hellip;</p>
+
+                            <!-- Button -->
                             <a href="{% url 'blog_detail' blogpost.id %}" class="btn btn-full text-full">Read More</a>
                         </div>
-                        {%  endfor %}
-                    </article>
-                </div>
+                    {%  endfor %}
+                </article>
             </div>
         </div>
+    </div>
 {% endblock %}
 
 {% block postloadjs %}

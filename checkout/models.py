@@ -8,6 +8,8 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
+    """ Create order model to database """
+
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True, related_name='orders')
@@ -37,6 +39,8 @@ class Order(models.Model):
         """
         Update grand total each time a line item is added,
         accounting for delivery costs.
+        
+        Return: self
         """
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
@@ -50,6 +54,8 @@ class Order(models.Model):
         """
         Override the original save method to set the order number
         if it hasn't been set already.
+
+        Return: self.
         """
         if not self.order_number:
             self.order_number = self._generate_order_number()
@@ -60,6 +66,8 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """ Create Order line item model to database """
+
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     product_size = models.CharField(max_length=2, null=True, blank=True) # XS, S, M, L, XL
@@ -70,6 +78,8 @@ class OrderLineItem(models.Model):
         """
         Override the original save method to set the lineitem total
         and update the order total.
+
+        Return: Self.
         """
         self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)

@@ -17,7 +17,15 @@ import json
 
 
 def _send_alert_email(product):
-    """Send the user a confirmation email"""
+    """ _send_alert_email:
+    Sends email alerts to admin when product low in stock.
+
+    Argument:
+    product: product low in stock after checkout.
+    
+    Returns:
+    Nothing.
+    """
 
     superusers = User.objects.filter(is_superuser=True).values_list('email')
     print(superusers)
@@ -40,6 +48,18 @@ def _send_alert_email(product):
 
 @require_POST
 def cache_checkout_data(request):
+    """ cache_checkout_data:
+
+    Saves profile data if save_info is valid \
+        and adds it to payment.
+
+    Arguments:
+    request: POST from stripe_elements.js
+
+    Returns:
+    HttpResponse 200 or 400
+    """
+
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -56,6 +76,19 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """ checkout:
+
+    Displays checkout page and bag content.
+    Sends order to Stripe and saves order if success.
+
+    Arguments:
+    request: POST or GET.
+
+    Returns
+    render: request, template, context.
+    if successful payment:Redirect: user to checkout_success view.
+    """
+
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -161,9 +194,18 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
+    """ checkout_success:
+
+    Displays checkout success page with order details.
+
+    Arguments:
+    request
+    order_number: unique number generated for the order
+
+    Returns:
+    render: checkout_success.html template
     """
-    Handle successful checkouts
-    """
+
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     items = json.loads(order.original_bag)

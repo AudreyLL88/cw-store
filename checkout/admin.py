@@ -5,11 +5,14 @@ from .models import Order, OrderLineItem
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
+
     model = OrderLineItem
     readonly_fields = ('lineitem_total',)
 
 
 class OrderAdmin(admin.ModelAdmin):
+    """ Create an Order section in Admin panel """
+
     inlines = (OrderLineItemAdminInline,)
 
     readonly_fields = ('order_number', 'user_profile', 'date',

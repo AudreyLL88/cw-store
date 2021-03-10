@@ -10,7 +10,16 @@ import time
 
 
 class StripeWH_Handler:
-    """Handle Stripe webhooks"""
+    """
+    Handle Stripe Webhooks.
+
+    Parameters:
+    none
+
+    Returns:
+    HttpsResponse: 200 or 400 in the console.
+
+   """
 
     def __init__(self, request):
         self.request = request

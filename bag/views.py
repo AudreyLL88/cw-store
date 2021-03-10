@@ -6,13 +6,32 @@ from products.models import Product
 
 
 def view_bag(request):
-    """ A view that renders the bag contents page """
+    """
+    Display all items in the shopping bag.
+
+    Parameters:
+    request.
+
+    Returns:
+    Render: request and bag template.
+
+   """
 
     return render(request, 'bag/bag.html')
 
 
 def add_to_bag(request, item_id):
-    """ Add a quantity of the specified product to the shopping bag """
+    """
+    Allows items to be added to shopping bag.
+
+    Parameters:
+    request: the POST request from the form.
+    item_id: the ID of the item added to the bag
+
+    Returns:
+    Redirect: to product url (stays on the same page)
+
+   """
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -22,6 +41,7 @@ def add_to_bag(request, item_id):
         size = request.POST['product_size']
     bag = request.session.get('bag', {})
 
+    # quantity and size relations
     if size:
         if item_id in list(bag.keys()):
             if size in bag[item_id]['items_by_size'].keys():
@@ -46,14 +66,26 @@ def add_to_bag(request, item_id):
 
 
 def adjust_bag(request, item_id):
-    """Adjust the quantity of the specified product to the specified amount"""
+    """
+    Allows the user the adjust the number and size of items in the bag
+
+    Parameters:
+    request: the POST request from the form.
+    item_id: the ID of the item added to the bag
+
+    Returns:
+    Redirect: to product url (stays on the same page)
+
+   """
 
     quantity = int(request.POST.get('quantity'))
     size = None
+
     if 'product_size' in request.POST:
         size = request.POST['product_size']
     bag = request.session.get('bag', {})
 
+    # Adjust size if any.
     if size:
         if quantity > 0:
             bag[item_id]['items_by_size'][size] = quantity
@@ -72,8 +104,17 @@ def adjust_bag(request, item_id):
 
 
 def remove_from_bag(request, item_id):
-    """Remove the item from the shopping bag"""
+    """
+    Allows user to remove a product from the bag
 
+    Parameters:
+    request: the POST request from the form.
+    item_id: the ID of the item added to the bag
+
+    Returns:
+    HttpsResponse: 500 or 200 response in the console
+
+   """
     try:
         product = get_object_or_404(Product, pk=item_id)
         size = None

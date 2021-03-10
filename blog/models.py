@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 
 class BlogPost(models.Model):
+    """ Create Blog post model to database """
 
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
@@ -19,7 +20,8 @@ class BlogPost(models.Model):
 
 
 class BlogComment(models.Model):
-    """Add a product review in database."""
+    """ Create Blog comment model to database """
+
     blogpost = models.ForeignKey(
         BlogPost,
         on_delete=models.CASCADE,

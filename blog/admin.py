@@ -5,7 +5,7 @@ from .models import BlogPost, BlogComment
 
 
 class BlogCommentInline(admin.TabularInline):
-    """ Allows view/edit of reviews from Product detail page """
+    """ Allows view/edit of blog comments from Blog detail page """
     model = BlogComment
 
 
@@ -24,7 +24,7 @@ class BlogAdmin(admin.ModelAdmin):
 
 
 class BlogCommentAdmin(admin.ModelAdmin):
-    """ Creates the admin interface for Product Reviews """
+    """ Creates the admin interface for Blog Comment """
     list_display = (
         'comment_title',
         'comment',

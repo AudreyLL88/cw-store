@@ -8,7 +8,16 @@ from .models import BlogPost, BlogComment
 
 
 def blog(request):
-    """ A view to return the index page """
+    """
+    Displays all blog posts.
+
+    Parameters:
+    request.
+
+    Returns:
+    Render: request, blog template and context
+
+   """
 
     blogposts = BlogPost.objects.all()
 
@@ -19,9 +28,41 @@ def blog(request):
     return render(request, 'blog/blog.html', context)
 
 
+def blog_detail(request, blogpost_id):
+    """
+    Display all items in the shopping bag.
+
+    Parameters:
+    request.
+    blogpost_id: ID of the blog post displayed
+
+    Returns:
+    Render: request, blog template and context.
+
+   """
+
+    blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
+
+    context = {
+        'blogpost': blogpost,
+    }
+
+    return render(request, 'blog/blog_detail.html', context)
+
+
 @login_required
 def add_blogpost(request):
-    """ Add a product to the store """
+    """
+    Create Add blog post form for admin only.
+    Deal with form submission.
+
+    Arguments:
+    1. request
+
+    Returns:
+    If GET : Reverse: request, template, form in context.
+    If POST: argument blogpost.id to blog_detail view.
+    """
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -45,21 +86,22 @@ def add_blogpost(request):
     return render(request, template, context)
 
 
-def blog_detail(request, blogpost_id):
-    """ A view to show individual blog details """
-
-    blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
-
-    context = {
-        'blogpost': blogpost,
-    }
-
-    return render(request, 'blog/blog_detail.html', context)
-
-
 @login_required
 def edit_blogpost(request, blogpost_id):
-    """ Edit a blog post """
+    """
+    Edits an existing blogpost.
+    Display form only for Admin.
+
+    Arguments:
+    request
+    blogpost_id: the ID of the edited blog post.
+
+    Returns:
+    If GET: request, template, context
+    f POST: redirects to blog_detail template.
+            adds blogpost.id to blog_detail view.
+
+    """
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -89,7 +131,18 @@ def edit_blogpost(request, blogpost_id):
 
 @login_required
 def delete_blogpost(request, blogpost_id):
-    """ Delete Blog post forever"""
+    """
+    Deletes at an existing blogpost.
+    Only for Admin.
+
+    Arguments:
+    request
+    blogpost_id: the ID of the deleted blogpost.
+
+    Returns:
+    redirect: to blog view.
+
+    """
 
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
 
@@ -103,7 +156,17 @@ def delete_blogpost(request, blogpost_id):
 
 @login_required
 def blog_comment(request, blogpost_id):
-    """ Allows user to add a comment """
+    """
+    Create Add comment post form for regitered only.
+    Deal with form submission.
+
+    Arguments:
+    1. request
+
+    Returns:
+    If GET : Reverse: request, template, form in context.
+    If POST: argument blogpost.id to blog_detail view.
+    """
 
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
 
@@ -133,7 +196,18 @@ def blog_comment(request, blogpost_id):
 
 @login_required
 def delete_comment(request, comment_id):
-    """ Delete comment forever"""
+    """
+    Deletes at an existing comment.
+    Only for registered user.
+
+    Arguments:
+    request
+    comment_id: the ID of the deleted comment.
+
+    Returns:
+    redirect: to blog view.
+
+    """
 
     comment = get_object_or_404(BlogComment, pk=comment_id)
 
@@ -148,7 +222,18 @@ def delete_comment(request, comment_id):
 
 @login_required
 def edit_comment(request, comment_id):
-    """ Allows user to edit a comment"""
+    """
+    Edits an existing blogpost.
+    Display form only for Admin.
+
+    Arguments:
+    request
+    comment_id: the ID of the edited blog comment.
+
+    Returns:
+    Redirect: to blog view.
+
+    """
 
     comment = get_object_or_404(BlogComment, pk=comment_id)
     if request.user == comment.comment_user:

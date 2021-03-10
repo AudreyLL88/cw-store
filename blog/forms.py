@@ -4,6 +4,7 @@ from .models import BlogPost, BlogComment
 
 
 class BlogForm(forms.ModelForm):
+    """ Create form for blog posts """
 
     class Meta:
         model = BlogPost
@@ -18,6 +19,8 @@ class BlogForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
+    """ Create comment form for blog posts """
+
     class Meta:
         # which model and which fields
         model = BlogComment

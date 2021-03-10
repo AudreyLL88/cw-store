@@ -7,8 +7,16 @@ from products.models import Product
 
 
 def index(request):
-    """ A view to return the index page """
+    """
+    Displays index page and srandom suggested products.
 
+    Parameters:
+    request.
+
+    Returns:
+    Render: request, index template and context
+
+   """
     suggestions = Product.objects.all()
     suggested_products = list(suggestions)
 

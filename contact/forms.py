@@ -3,11 +3,9 @@ from .models import Contact
 
 
 class ContactForm(forms.ModelForm):
-    """
-    Creates the Contact Us form.
-    """
+    """Creates Contact form"""
+
     class Meta:
-        # which model and which fields
         model = Contact
         fields = (
             'first_name',

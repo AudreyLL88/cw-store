@@ -10,8 +10,15 @@ from .forms import ContactForm
 
 def contact(request):
     """
-    Creates contact page, and sends contact form message
-    """
+    Create contact page and send messages to admin and users.
+
+    Parameters:
+    request.
+
+    Returns:
+    Render: request, blog template and context
+
+   """
 
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)

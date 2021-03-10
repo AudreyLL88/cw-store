@@ -3,9 +3,8 @@ from .models import Contact
 
 
 class ContactAdmin(admin.ModelAdmin):
-    """
-    Create the admin interface for Contact Forms
-    """
+    """Create Contact form section in Admin Panel"""
+
     readonly_fields = (
         'subject',
         'first_name',

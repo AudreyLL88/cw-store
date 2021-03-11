@@ -390,10 +390,8 @@ p {
     position:relative;
 }
 .card__details{
-    float: left;
     padding: 20px;
     margin-bottom: 15px;
-    width: calc(70%);
 }
 
 .all-products .col-sm-12, 

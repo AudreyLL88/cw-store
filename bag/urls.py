@@ -13,5 +13,5 @@ urlpatterns = [
          name='adjust_bag'),
     path('remove/<item_id>/',
          views.remove_from_bag,
-         Sname='remove_from_bag'),
+         name='remove_from_bag'),
 ]

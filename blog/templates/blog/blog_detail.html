@@ -48,9 +48,9 @@
 
              <!-- Image -->
             {% if blogpost.image %} 
-                <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="img-fluid blog-img" />             
+                <img src="{{ blogpost.image.url }}" alt="{{ blogpost.blog_title }}" class="img-fluid blog-img" />             
             {% else %}
-                <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="img-fluid blog-img" />
+                <img src="{{ blogpost.image.url }}" alt="{{ blogpost.blog_title }}" class="img-fluid blog-img" />
             {% endif %}
         </div>
     </div>

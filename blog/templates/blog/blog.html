@@ -20,43 +20,30 @@
             </div>
         </div>
 
-        <!-- Post info -->
+        <!-- Blog Post -->
         <div class="row">
-            <div class="col-12">
-                <article id="blog-post">
-                    {% for blogpost in blogposts %}
-                        <header>
-                            <div class="meta text-full">
-                                Written by <span class="author">{{ blogpost.author }}</span> <span class="date">{{ blogpost.date }}</span>
-                            </div>
-                            <h2>
-                                <a href="" class="text-full">{{ blogpost.blog_title }}</a>
-                            </h2>
-                        </header>
-
-                        <!-- Post info -->
-                        <div class="blog-img">
-                            {% if blogpost.image %}
-                                <a href="{% url 'blog_detail' blogpost.id %}">
-                                    <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="img-fluid" />
-                                </a>
-                            {% else %}
-                                <a href="{% url 'blog_detail' blogpost.id %}">
-                                    <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="img-fluid" />
-                                </a>
-                            {% endif %}
-
-                            <!-- Content preview -->
-                            <p class="text-full">{{ blogpost.blog_content}} &hellip;</p>
-
-                            <!-- Button -->
-                            <a href="{% url 'blog_detail' blogpost.id %}" class="btn btn-full text-full">Read More</a>
-                        </div>
-                    {%  endfor %}
-                </article>
-            </div>
+            {% for blogpost in blogposts %}
+                <div class="col-md-6 mb-4">  
+                    <!-- Image -->         
+                    <div class="text-center ">
+                        <a href="{% url 'blog_detail' blogpost.id %}">
+                            <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="img-fluid">
+                        </a>
+                        <!-- Title -->
+                        <h4 class="mx-2 my-2 text-full">{{ blogpost.blog_title }}</h4>
+                        <!-- Preview -->
+                        <p class="text-full pt-2">A view into Chelsea new Tour</p>
+                        <!-- Author -->
+                        <small class="px-2 text-muted">Posted by: {{ blogpost.author }} <span class="date"> on: {{ blogpost.date }}</span></small>
+                    </div>
+                    <!-- Button -->
+                    <div class="text-center mt-4 mb-3">
+                        <a href="{% url 'blog_detail' blogpost.id %}" class="btn btn-lg d-block btn-full text-full mx-2">READ MORE</a>
+                    </div>
+                </div>       
+            {%  endfor %}
         </div>
-    </div>
+    z</div>
 {% endblock %}
 
 {% block postloadjs %}

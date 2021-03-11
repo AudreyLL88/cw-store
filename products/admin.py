@@ -10,6 +10,8 @@ class ReviewInline(admin.TabularInline):
 
 
 class ProductAdmin(admin.ModelAdmin):
+    """ Add products section in admin dashboard """
+
     list_display = (
         'sku',
         'name',
@@ -28,6 +30,8 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    """ Add category section in admin dashboard """
+
     list_display = (
         'friendly_name',
         'name',
@@ -35,7 +39,8 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class ReviewAdmin(admin.ModelAdmin):
-    """ Creates the admin interface for Product Reviews """
+    """ Add product review section in admin dashboard """
+
     list_display = (
         'review_title',
         'reviewer',

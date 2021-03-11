@@ -30,14 +30,14 @@ def blog(request):
 
 def blog_detail(request, blogpost_id):
     """
-    Display all items in the shopping bag.
+    Display blog detail page.
 
     Parameters:
     request.
     blogpost_id: ID of the blog post displayed
 
     Returns:
-    Render: request, blog template and context.
+    Render: request, blog detail template and context.
 
    """
 
@@ -161,7 +161,8 @@ def blog_comment(request, blogpost_id):
     Deal with form submission.
 
     Arguments:
-    1. request
+    request.
+    blogpost_id: ID of the blogpost linked to comment.
 
     Returns:
     If GET : Reverse: request, template, form in context.

@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 
 
 class Category(models.Model):
+    """Saves a category model in database."""
+
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -18,6 +20,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    """Saves a product model in database."""
 
     Sizes = (('XS', 'X-Small'), ('S', 'Small'), ('M', 'Medium'), ('L', 'Large'), ('XL', 'X-Large'))
     INTEGER_QTY = [tuple([x, x]) for x in range(1, 2500)]
@@ -41,7 +44,8 @@ INTEGER_CHOICES = [tuple([x, x]) for x in range(1, 6)]
 
 
 class Review(models.Model):
-    """Add a product review in database."""
+    """Saves a review model in database"""
+
     product = models.ForeignKey(
         Product,
         on_delete=models.CASCADE,

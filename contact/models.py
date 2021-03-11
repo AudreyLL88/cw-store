@@ -2,9 +2,8 @@ from django.db import models
 
 
 class Contact(models.Model):
-    """
-    Saves a contact model in database.
-    """
+    """Saves a contact model in database."""
+
     class Meta:
         verbose_name_plural = 'Contact Form Submissions'
 

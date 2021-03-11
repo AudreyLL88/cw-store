@@ -4,6 +4,7 @@ from .models import Product, Category, Review
 
 
 class ProductForm(forms.ModelForm):
+    """ Creates form based on product model for admin """
 
     class Meta:
         model = Product
@@ -22,6 +23,8 @@ class ProductForm(forms.ModelForm):
 
 
 class ReviewForm(forms.ModelForm):
+    """ Creates form based on review model for registered users """
+
     class Meta:
         # which model and which fields
         model = Review

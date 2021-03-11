@@ -9,7 +9,17 @@ from products.models import Review
 
 @login_required
 def profile(request):
-    """ Display the user's profile. """
+    """
+        Displays user profile and saves infos if changed.
+        Includes order and review history.
+
+        Parameters:
+        request.
+
+        Returns:
+        Render: request, profile template and context
+
+    """
 
     profile = get_object_or_404(UserProfile, user=request.user)
 
@@ -26,7 +36,6 @@ def profile(request):
     orders = profile.orders.all()
     reviews = Review.objects.filter(reviewer=request.user)
 
-
     template = 'profiles/profile.html'
     context = {
         'form': form,
@@ -39,6 +48,20 @@ def profile(request):
 
 
 def order_history(request, order_number):
+
+    """
+        Displays previous order details.
+
+        Parameters:
+        request.
+        order_number: Unique number generated
+        when order was successful.
+
+        Returns:
+        Render: request, checkout_success template and context.
+
+    """
+
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (

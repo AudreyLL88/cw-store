@@ -75,7 +75,10 @@ def add_blogpost(request):
             messages.success(request, 'Successfully added blog post!')
             return redirect(reverse('blog_detail', args=[blogpost.id]))
         else:
-            messages.error(request, 'Failed to add blog post. Please ensure the form is valid.')
+            messages.error(
+                        request,
+                        'Failed to add blog post.\
+                        Please ensure the form is valid.')
     else:
         form = BlogForm()
     template = 'blog/add_blogpost.html'
@@ -115,7 +118,10 @@ def edit_blogpost(request, blogpost_id):
             messages.success(request, 'Successfully updated blog post!')
             return redirect(reverse('blog_detail', args=[blogpost.id]))
         else:
-            messages.error(request, 'Failed to update the blog post. Please ensure the form is valid.')
+            messages.error(
+                    request,
+                    'Failed to update the blog post.\
+                    Please ensure the form is valid.')
     else:
         form = BlogForm(instance=blogpost)
         messages.info(request, f'You are editing {blogpost.blog_title}')
@@ -242,7 +248,9 @@ def edit_comment(request, comment_id):
             form = CommentForm(request.POST, instance=comment)
             if form.is_valid():
                 form.save()
-                messages.success(request, 'Your comment is successfully edited')
+                messages.success(
+                            request,
+                            'Your comment is successfully edited')
                 return redirect(reverse('blog'))
             else:
                 messages.error(request,

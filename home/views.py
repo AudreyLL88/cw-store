@@ -21,7 +21,8 @@ def index(request):
     suggested_products = list(suggestions)
 
     # pick 3 random from suggested list
-    suggested_products = random.sample(suggested_products, min(len(suggested_products), 4))
+    suggested_products = random.sample(
+                suggested_products, min(len(suggested_products), 4))
 
     context = {
         'suggested_products': suggested_products,

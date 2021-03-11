@@ -32,7 +32,7 @@
                         <!-- Title -->
                         <h4 class="mx-2 my-2 text-full">{{ blogpost.blog_title }}</h4>
                         <!-- Preview -->
-                        <p class="text-full pt-2">A view into Chelsea new Tour</p>
+                        <p class="text-full pt-2">{{ blogpost.blog_preview }}</p>
                         <!-- Author -->
                         <small class="px-2 text-muted">Posted by: {{ blogpost.author }} <span class="date"> on: {{ blogpost.date }}</span></small>
                     </div>
@@ -43,7 +43,7 @@
                 </div>       
             {%  endfor %}
         </div>
-    z</div>
+    </div>
 {% endblock %}
 
 {% block postloadjs %}

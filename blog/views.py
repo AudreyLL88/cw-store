@@ -42,9 +42,11 @@ def blog_detail(request, blogpost_id):
    """
 
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
+    comments = BlogComment.objects.filter(blogpost=blogpost)
 
     context = {
         'blogpost': blogpost,
+        'comments': comments,
     }
 
     return render(request, 'blog/blog_detail.html', context)
@@ -163,7 +165,7 @@ def delete_blogpost(request, blogpost_id):
 @login_required
 def blog_comment(request, blogpost_id):
     """
-    Create Add comment post form for regitered only.
+    Create Add comment post form for regitered user only.
     Deal with form submission.
 
     Arguments:

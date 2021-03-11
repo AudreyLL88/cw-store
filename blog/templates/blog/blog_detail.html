@@ -69,12 +69,12 @@
                 <h3 class="mb-0 mb-4 comment-header text-full">Comments</h3>
                 <div class="row align-items-start">
                     <div class="col-lg-6 col-sm-12 comment-total">
-                        {% if blogpost.comment.count > 0 %}
-                            <p class="text-full">{{ blogpost.comment.count }} <i class="far fa-star"></i></p>
+                        {% if blogpost.comments.count > 0 %}
+                            <p class="text-full">{{ blogpost.comments.count }}</p>
                         {% else %}
                             <p class="text-full">0</p>
                         {% endif %}
-                        <p>total review</p>
+                        <p>total comments</p>
                     </div>
                     <div class="col-lg-6 col-sm-12 comment-btn-up">
                         <a href="{% url 'blog_comment' blogpost.id %}" type="button" class="btn btn-lg btn-clear">Write a comment</a>
@@ -83,8 +83,8 @@
             </div>
             <div class="bg-white rounded shadow-sm p-4 mb-4">
                 <div class="pt-4 pb-4">
-                    {% if blogpost.comment.count > 0 %}
-                        {% for comment in blogpost.comment.all %}
+                    {% if blogpost.comments.count > 0 %}
+                        {% for comment in blogpost.comments.all %}
                             <div class="row align-items-start comment-detail">
                                 <div class="col-4">
                                     <h6 class="mb-1 text-full">{{ comment.comment_user }}</h6>

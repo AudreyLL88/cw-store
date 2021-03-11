@@ -29,7 +29,7 @@ class BlogComment(models.Model):
     blogpost = models.ForeignKey(
         BlogPost,
         on_delete=models.CASCADE,
-        related_name='blogpost')
+        related_name='comments')
     comment_user = models.ForeignKey(
         User, on_delete=models.CASCADE)
     date = models.DateTimeField(

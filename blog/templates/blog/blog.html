@@ -27,9 +27,9 @@
                     <!-- Image -->         
                     <div class="text-center ">
                         {% if blogpost.image %} 
-                            <img src="{{ blogpost.image.url }}" alt="{{ blogpost.blog_title }}" class="img-fluid blog-img" />             
+                                <img src="{{ blogpost.image.url }}" alt="{{ blogpost.blog_title }}" class="wrap_img"/>       
                         {% else %}
-                            <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="img-fluid blog-img" />
+                                <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="wrap_img" />
                         {% endif %}
                         <!-- Title -->
                         <h4 class="mx-2 my-2 text-full">{{ blogpost.blog_title }}</h4>
@@ -40,7 +40,7 @@
                     </div>
                     <!-- Button -->
                     <div class="text-center mt-4 mb-3">
-                        <a href="{% url 'blog_detail' blogpost.id %}" class="btn btn-lg d-block btn-full text-full mx-2">READ MORE</a>
+                        <a href="{% url 'blog_detail' blogpost.id %}" class="btn btn-lg d-block rounded-0 btn-full text-full mx-2">READ MORE</a>
                     </div>
                 </div>       
             {%  endfor %}

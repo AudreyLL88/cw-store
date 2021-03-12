@@ -119,18 +119,18 @@
                     <h5 class="mb-0 mb-4 review-header text-full">Ratings and Reviews</h5>
                     <div class="row align-items-start">
                         <div class="col-lg-4 col-sm-12 review-total">
-                            <b class="text-full">{{ product.reviews.count }}</b>
-                            <p>total review</p>
+                            <h4 class="text-full"><strong>{{ product.reviews.count }}</strong></h4>
+                            <h6>total review</h6>
                         </div>
                         <div class="col-lg-4 col-sm-12 review-average">
                             {% if product.reviews.count > 0 %}
-                                <p class="text-full">{{ average_rating }} /5 <i class="far fa-star"></i></p>
+                                <h5 class="text-full"><strong>{{ average_rating }} /5 <i class="far fa-star"></i></strong></h5>
                             {% else %}
-                                <p class="text-full">{{ average_rating }}</p>
+                                 <h5 class="text-full"><strong>{{ average_rating }}</strong></h5>
                             {% endif %}
                         </div>
                             <div class="col-lg-4 col-sm-12 review-btn-up">
-                                <a href="{% url 'review_product' product.id %}" type="button" class="btn btn-lg btn-clear">write a review</a>
+                                <a href="{% url 'review_product' product.id %}" type="button" class="btn btn-lg btn-clear">WRITE A REVIEW</a>
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                                         </div>
                                         <div class="col-8">
                                             <h4 class="mb-3 text-full">
-                                                {{ review.rating }}
+                                                {{ review.rating }} <i class="far fa-star"></i>
                                             </h4>
                                             <div class="text-full">
                                                 <p>{{ review.review }}</p>

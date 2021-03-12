@@ -14,7 +14,7 @@
     <div class="row text-center">
 
         <!-- Blogpost infos and superuser functionnality-->
-        <div class="col-sm-12 col-md-6 mx-auto">
+        <div class="col-sm-12 col-md-8 mx-auto">
             <h2 class="logo-font mb-4 mt-5 text-full blog-title">{{ blogpost.blog_title }}</h2>
             <h5 class="text-muted blog-author"> by: {{ blogpost.author}}</h5>
             <h5 class="text-muted blog-date"> {{ blogpost.date }}</h5>
@@ -59,7 +59,7 @@
 
      <!-- Written Content -->
     <div class="row text-justify">
-        <div class="col-sm-12 col-md-6 mx-auto mb-5 mt-5 blog-content">           
+        <div class="col-sm-12 col-md-8 mx-auto mb-5 mt-5 blog-content">           
             <p class="text-full">{{ blogpost.blog_content }}</p>
         </div>
     </div>
@@ -72,11 +72,11 @@
                 <div class="row align-items-start">
                     <div class="col-lg-6 col-sm-12 comment-total">
                         {% if blogpost.comments.count > 0 %}
-                            <p class="text-full">{{ blogpost.comments.count }}</p>
+                            <h4 class="text-full"><strong>{{ blogpost.comments.count }}</strong></h4>
                         {% else %}
-                            <p class="text-full">0</p>
+                            <h4 class="text-full">0</h4>
                         {% endif %}
-                        <p>total comments</p>
+                        <h6>total comments</h6>
                     </div>
                     <div class="col-lg-6 col-sm-12 comment-btn-up">
                         <a href="{% url 'blog_comment' blogpost.id %}" type="button" class="btn btn-lg btn-clear">Write a comment</a>

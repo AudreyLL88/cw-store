@@ -192,43 +192,45 @@
         </div>
 
         <!-- Suggestions --> 
-        <article class="container featured-card">
-            <div class="col-sm-12 text-center text-full">
-                <h3>You might also like:</h3>
-                <hr>
-            </div>
-            {% for suggested_product in suggested_products %}
-                <div class="col-sm-6 col-lg-4 col-xl-3 card__wrapper">
-                    <div class="box">
-                        <div class="top__box">
-                            {% if suggested_product.image %}
-                                <a href="{% url 'product_detail' suggested_product.id %}">
-                                    <img src="{{ suggested_product.image.url }}" alt="{{ suggested_product.name }}">
-                                </a>
-                            {% else %}
-                                <a href="{% url 'product_detail' suggested_product.id %}">
-                                    <img src="{{ MEDIA_URL }}noimage.png" alt="{{ suggested_product.name }}">
-                                </a>
-                            {% endif %}
-                        </div>
-                        <div class="bottom pb-4">
-                            <div class="bottom__box">
-                                <div class="card__details">
-                                    <p class=" mb-0 text-left">{{ suggested_product.name }}</p>
-                                    <p class="mb-0 text-left font-weight-bold">${{ suggested_product.price }}</p>
-                                    {% if suggested_product.category %}
-                                        <p class="small mt-1 mb-0">
-                                        <a class="text-muted" href="#">
-                                            <i class="fas fa-tag mr-1"></i>{{ suggested_product.category.friendly_name }}
-                                        </a>
-                                    </p>
-                                    {% endif %}
+        <article class="featured-card">
+            <div class="row no-gutters">
+                <div class="col-sm-12 text-center text-full">
+                    <h3>You might also like:</h3>
+                    <hr>
+                </div>
+                {% for suggested_product in suggested_products %}
+                    <div class="col-sm-6 col-lg-4 col-xl-3 card__wrapper">
+                        <div class="box">
+                            <div class="top__box">
+                                {% if suggested_product.image %}
+                                    <a href="{% url 'product_detail' suggested_product.id %}">
+                                        <img src="{{ suggested_product.image.url }}" alt="{{ suggested_product.name }}">
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'product_detail' suggested_product.id %}">
+                                        <img src="{{ MEDIA_URL }}noimage.png" alt="{{ suggested_product.name }}">
+                                    </a>
+                                {% endif %}
+                            </div>
+                            <div class="bottom pb-4">
+                                <div class="bottom__box">
+                                    <div class="card__details">
+                                        <p class=" mb-0 text-left">{{ suggested_product.name }}</p>
+                                        <p class="mb-0 text-left font-weight-bold">${{ suggested_product.price }}</p>
+                                        {% if suggested_product.category %}
+                                            <p class="small mt-1 mb-0">
+                                            <a class="text-muted" href="#">
+                                                <i class="fas fa-tag mr-1"></i>{{ suggested_product.category.friendly_name }}
+                                            </a>
+                                        </p>
+                                        {% endif %}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </article>          
     </div>
 </main>

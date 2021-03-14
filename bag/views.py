@@ -40,6 +40,22 @@ def add_to_bag(request, item_id):
     if 'product_size' in request.POST:
         size = request.POST['product_size']
     bag = request.session.get('bag', {})
+    total_quantity = quantity
+
+    # check item availability against stock
+    if item_id in list(bag.keys()):
+        if size:
+            for size in bag[item_id]['items_by_size']:
+                total_quantity += bag[item_id]['items_by_size'][size]
+        else:
+            total_quantity += bag[item_id]
+    if total_quantity > product.qty:
+        messages.warning(
+                        request,
+                        f'Oops, only {product.qty} of '
+                        f'{product.name} left in stock. '
+                        f'Please revise your order. ')
+        return redirect(redirect_url)
 
     # quantity and size relations
     if size:

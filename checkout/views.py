@@ -217,7 +217,14 @@ def checkout_success(request, order_number):
     for item in items:
         sku = str('000000' + item)
         product = get_object_or_404(Product, sku=sku)
-        product.qty -= items[item]
+        if isinstance(items[item], int):
+            product.qty -= items[item]
+        else:
+            quantity = 0
+            for size in items[item]['items_by_size']:
+                quantity += items[item]['items_by_size'][size]
+            product.qty -= quantity
+
         if product.qty <= 3:
             _send_alert_email(product)
         product.save()

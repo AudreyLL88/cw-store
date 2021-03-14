@@ -38,7 +38,7 @@
                     <p class="mb-0"> Date: {{ order.date }}</p>
                     {% for item in order.lineitems.all %}
                         <p class="small mb-0"> Ordered:
-                            {{ item.product.name }}{% if item.product_size %} - Size {{ item.product.size|upper }}{% endif %}
+                            {{ item.product.name }}{% if item.product_size %} - Size {{ item.product_size|upper }}{% endif %}
                         </p>
                         <p class="small mb-0">Price per item: {{ item.quantity }} @ ${{ item.product.price }} each</p>
                     {% endfor %}

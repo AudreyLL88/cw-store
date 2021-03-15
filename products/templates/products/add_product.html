@@ -56,6 +56,40 @@
         });
     </script>
     <script type="text/javascript">
+        console.log('in it')
+        var category = $('#id_category');
+        var has_size = $('#id_has_sizes');
+        var size_1 = $('#id_size_1');
+        var size_2 = $('#id_size_2');
+        var size_3 = $('#id_size_3');
+        var size_4 = $('#id_size_4');
+        var size_5 = $('#id_size_5');
+
+        function refreshOptions() {
+            var values = parseInt(category.val())
+            if (values > 3) {
+                console.log('has_size')
+                has_size.attr('disabled', true);
+                size_1.attr('disabled', true);
+                size_2.attr('disabled', true);
+                size_3.attr('disabled', true);
+                size_4.attr('disabled', true);
+                size_5.attr('disabled', true);
+            } else {
+                console.log('has no size')
+                has_size.attr('disabled', false);
+                size_1.attr('disabled', false);
+                size_2.attr('disabled', false);
+                size_3.attr('disabled', false);
+                size_4.attr('disabled', false);
+                size_5.attr('disabled', false);
+            };
+        }
+        refreshOptions();
+
+        category.on('change', refreshOptions);
+    </script>
+    <script type="text/javascript">
         const sr = ScrollReveal({
         origin: 'top',
         distance: '80px',

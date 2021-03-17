@@ -59,7 +59,7 @@
                 </form>
             </div>
             <div class="col-12 col-lg-4 m-auto py-1 py-lg-0 text-lg-center">
-                <a href="" class="">
+                <a href="{% url 'home' %}" class="">
                     <h2 class="nav__logo">Chelsea Wolf</h2>
                 </a>
             </div>
@@ -147,16 +147,17 @@
                 <div class="col-xs-6 col-md-4 text-left">
                     <h6>Social Media</h6>
                     <ul class="social-icons">
-                        <li><a class="facebook" href="https://www.facebook.com/cchelseawwolfe/"><i class="fa fa-facebook"></i></a></li>
-                        <li><a class="twitter" href="https://twitter.com/CCHELSEAWWOLFE/"><i class="fa fa-twitter"></i></a></li>
-                        <li><a class="instagram" href="https://www.instagram.com/cchelseawwolfe/"><i class="fab fa-instagram"></i></a></li>
-                        <li><a class="youtube" href="https://www.youtube.com/channel/UCjunnZq5ArgycpGBkOVLUMA/"><i class="fab fa-youtube"></i></a></li>
+                        <li><a class="facebook" href="https://www.facebook.com/cchelseawwolfe/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="https://twitter.com/CCHELSEAWWOLFE/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="instagram" href="https://www.instagram.com/cchelseawwolfe/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a class="youtube" href="https://www.youtube.com/channel/UCjunnZq5ArgycpGBkOVLUMA/" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                        <li><a class="spotify" href="https://open.spotify.com/artist/6ZK2nrW8aCTg8Bid7I7N10" target="_blank"><i class="fab fa-spotify"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-xs-6 col-md-4">
                     <h6>Any Questions ?</h6>
                     <ul class="footer-links">
-                        <li><a href="http://scanfcode.com/contact/" class="btn btn-lg btn-clear rounded-0">Contact Us</a></li>
+                        <li><a href="{% url 'contact' %}" class="btn btn-lg btn-clear rounded-0">Contact Us</a></li>
                     </ul>
                 </div>
             </div>

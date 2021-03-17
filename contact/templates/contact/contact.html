@@ -9,17 +9,21 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container header-container">
+    <div class="container mt-4">
         <div class="overlay"></div>
+        <!-- Header -->
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
+                <hr>
+                <h2 class="logo-font mb-4 text-full text-center">Contact Us!</h2>
+                <hr>
+            </div>
+        </div>
 
-                <!-- Header -->
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <!-- Form -->
                 <div class="jumbotron bg-clear mt-4 wrap-contact">
-                    <hr>
-                    <h2 class="logo-font mb-4 text-full text-center content-contact">Contact Us !</h2>
-                    <hr>
-
                     <!-- Form -->
                     <form action="{% url 'contact' %}" method="POST" id="contact-form">
                         {% csrf_token %}

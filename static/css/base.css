@@ -6,7 +6,13 @@
 :root {
   --first-color: #EAD5CC;
   --second-color: #4c4036;
-  --white-color: #fff; }
+  --white-color: #fff; 
+  --grey-color: #e1e1e1; 
+}
+
+.bg-grey {
+    background-color: var(--grey-color);
+}
 
 /*------Fonts------*/
 :root {
@@ -570,6 +576,10 @@ figure .wrap_img {
   margin:0
 }
 
+.social-icons a:first-child {
+    margin-left: 0;
+}
+
 /* ----- Media Queries ------- */
 
 /* Slightly larger container on xl screens */
@@ -702,7 +712,8 @@ figure .wrap_img {
 {
   .footer
   {
-    padding-bottom:0
+    padding-bottom:0;
+    text-align: center;
   }
 }
 .social-icons

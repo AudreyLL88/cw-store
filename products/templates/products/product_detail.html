@@ -19,10 +19,11 @@
                 {% if product.image %}
                     <img class="item-img" src="{{ product.image.url }}" alt="{{ product.name }}" />              
             </div>
-                {% else %}
-                    <a href="">
-                        <img class="item" src="{{ MEDIA_URL }}cw_red.png" alt="{{ product.name }}">
-                    </a>
+                
+                <div>
+                    {% else %}
+                    <img class="item-img" src="{{ MEDIA_URL }}cw_red.png" alt="{{ product.name }}">
+                </div>   
                 {% endif %}
         </div>
 
@@ -208,7 +209,7 @@
                                     </a>
                                 {% else %}
                                     <a href="{% url 'product_detail' suggested_product.id %}">
-                                        <img src="{{ MEDIA_URL }}noimage.png" alt="{{ suggested_product.name }}">
+                                        <img src="{{ MEDIA_URL }}cw_red.png" alt="{{ suggested_product.name }}">
                                     </a>
                                 {% endif %}
                             </div>

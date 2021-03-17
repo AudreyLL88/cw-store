@@ -18,13 +18,10 @@
             <div>
                 {% if product.image %}
                     <img class="item-img" src="{{ product.image.url }}" alt="{{ product.name }}" />              
-            </div>
-                
-                <div>
-                    {% else %}
+                {% else %}
                     <img class="item-img" src="{{ MEDIA_URL }}cw_red.png" alt="{{ product.name }}">
-                </div>   
                 {% endif %}
+            </div>   
         </div>
 
         <!-- Product infos and admin functionnalities -->

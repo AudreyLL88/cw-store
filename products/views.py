@@ -6,6 +6,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category, Review
 from .forms import ProductForm, ReviewForm
+from bag.views import remove_from_bag
 
 # Create your views here.
 
@@ -211,6 +212,7 @@ def edit_product(request, product_id):
 def delete_product(request, product_id):
     """
     Deletes at an existing product.
+    Checks if the product is in the bag and removes it.
     Only for Admin.
 
     Arguments:
@@ -227,6 +229,11 @@ def delete_product(request, product_id):
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
+
+    # Check if product in bag.
+    bag = request.session.get('bag', {})
+    if str(product_id) in list(bag.keys()):
+        remove_from_bag(request, str(product_id))
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))

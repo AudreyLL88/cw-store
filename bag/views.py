@@ -37,7 +37,7 @@ def add_to_bag(request, item_id):
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     size = None
-    if 'product_size' in request.POST:
+    if 'product_size' in request.POST.keys():
         size = request.POST['product_size']
     bag = request.session.get('bag', {})
     total_quantity = quantity
@@ -45,8 +45,8 @@ def add_to_bag(request, item_id):
     # check item availability against stock
     if item_id in list(bag.keys()):
         if size:
-            for size in bag[item_id]['items_by_size']:
-                total_quantity += bag[item_id]['items_by_size'][size]
+            for item_size in bag[item_id]['items_by_size']:
+                total_quantity += bag[item_id]['items_by_size'][item_size]
         else:
             total_quantity += bag[item_id]
     if total_quantity > product.qty:

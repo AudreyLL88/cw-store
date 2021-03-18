@@ -300,12 +300,6 @@ p {
     padding: 0;
 }
 
-.home__about{
-  position: relative;
-  display: grid;
-  overflow: hidden;
-}
-
 .about__img{
  object-fit: cover;
  width: 100%;
@@ -333,7 +327,6 @@ p {
 }
 
 /* ---- Landing page Bottom Banner ---- */
-
 
 .bg-clear {
     background-color: var(--first-color);

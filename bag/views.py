@@ -64,20 +64,20 @@ def add_to_bag(request, item_id):
                 bag[item_id]['items_by_size'][size] += quantity
                 messages.success(
                         request,
-                        f'Updated size {size.upper()}'
-                        f'{product.name} quantity to'
+                        f'Updated size {size.upper()} '
+                        f'{product.name} quantity to '
                         f'{bag[item_id]["items_by_size"][size]}')
             else:
                 bag[item_id]['items_by_size'][size] = quantity
                 messages.success(
                         request,
-                        f'Added size {size.upper()}'
+                        f'Added size {size.upper()} '
                         f'{product.name} to your bag')
         else:
             bag[item_id] = {'items_by_size': {size: quantity}}
             messages.success(
                         request,
-                        f'Added size {size.upper()}'
+                        f'Added size {size.upper()} '
                         f'{product.name} to your bag')
     else:
         if item_id in list(bag.keys()):

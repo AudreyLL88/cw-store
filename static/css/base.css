@@ -407,8 +407,12 @@ p {
 /*------ Product Page ------*/
 
 a.category-badge > span.badge:hover {
-    background: #212529 !important;
+    background: var(--second-color) !important;
     color: #fff !important;
+}
+
+.border-full {
+    color: var(--second-color);
 }
 
 .btt-button {

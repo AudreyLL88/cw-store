@@ -14,7 +14,7 @@
 <div class="container">
 
     <!-- Header -->
-    <div class="row justify-content-center review-edit-header">
+    <div class="row justify-content-center review-header">
         <div class="col-12 col-md-12">
             <hr>
             <h2 class="logo-font mb-4 text-full text-center">My Review</h2>
@@ -23,11 +23,11 @@
     </div>
 
     <!-- Form -->
-    <div class="row justify-content-center review-edit-form">
-        <div class=" col-12 col-md-6 bg-white rounded shadow-sm p-4 mb-5">
-            <h5 class="mb-4">Leave a Review</h5>
+    <div class="row justify-content-center">
+        <div class=" col-12 col-md-6 bg-white rounded shadow-sm p-4 mb-5 review-form">
+            <h5 class="mb-4">Edit your Review</h5>
             <form method="POST" action="{% url 'edit_review' review.id %}" enctype="multipart/form-data">
-                <div class="form-group review-write-detail">
+                <div class="form-group">
                     {% csrf_token %}
                     {{ form | crispy }}
                 </div>
@@ -45,14 +45,5 @@
 {% endblock %}
 
 {% block postloadjs %}
-<script type="text/javascript">
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 2000,
-    reset: true
-})
-sr.reveal('.review-edit-header', {delay: 400})
-sr.reveal('.review-edit-form', {delay: 600, interval: 200})
-</script>
+<script src="{% static 'products/js/animation_reviews.js' %}"></script>
 {% endblock %}

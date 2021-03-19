@@ -1,18 +1,20 @@
+// On scroll animation for edit/add product forms.
 const sr = ScrollReveal({
         origin: 'top',
         distance: '80px',
         duration: 2000,
         reset: true
     })
-    sr.reveal('.product-header', {delay: 400})
-    sr.reveal('.product-form', {delay: 600, interval: 200})
+sr.reveal('.product-header', {delay: 400})
+sr.reveal('.product-form', {delay: 600, interval: 200})
 
+// Image text set-up in add/edit product forms.
 $('#new-image').change(function() {
             var file = $('#new-image')[0].files[0];
             $('#filename').text(`Image will be set to: ${file.name}`);
         });
 
-
+// Hide sizes if category is not clothing.
 var category = $('#id_category');
 var has_size = $('#id_has_sizes');
 var size_1 = $('#id_size_1');

@@ -1,7 +1,9 @@
+// Back to top page button.
 $('.btt-link').click(function(e) {
 			window.scrollTo(0,0)
         })
 
+// Sorting selector logic.
 $('#sort-selector').change(function() {
     var selector = $(this);
     var currentUrl = new URL(window.location);

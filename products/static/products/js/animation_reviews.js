@@ -1,3 +1,4 @@
+// On scroll animation of review form.
 const sr = ScrollReveal({
     origin: 'top',
     distance: '80px',

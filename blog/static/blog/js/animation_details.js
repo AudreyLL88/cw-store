@@ -1,3 +1,4 @@
+// Blog elements animation.
 gsap.from(".blog-title", { opacity: 0, duration: 1, delay: 1.5, x: -100 });
 gsap.from(".blog-author", { opacity: 0, duration: 1, delay: 2.5, y: -50 });
 gsap.from(".blog-date", { opacity: 0, duration: 1, delay: 3, x: -100 });
@@ -5,6 +6,7 @@ gsap.from(".blog-crud", { opacity: 0, duration: 1, delay: 3.5, x: -100 });
 gsap.from(".blog-img", { opacity: 0, duration: 1, delay: 3, x: 100 });
 gsap.from(".blog-content", { opacity: 0, duration: 1, delay: 3.5, y: 50 });
 
+// Scroll animation in comment section.
 const sr = ScrollReveal({
     origin: 'top',
     distance: '80px',

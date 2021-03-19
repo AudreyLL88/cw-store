@@ -1,3 +1,4 @@
+// Scroll animation.
 const sr = ScrollReveal({
     origin: 'top',
     distance: '80px',

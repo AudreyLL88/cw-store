@@ -4,8 +4,8 @@
 /*----- VARIABLES CSS -----*/
 /*------Colors------*/
 :root {
-  --first-color: #EAD5CC;
-  --second-color: #4c4036;
+  --first-color: #bd8c7d;
+  --second-color: #030303;
   --white-color: #fff; 
   --grey-color: #f0f0f0; 
 }
@@ -257,8 +257,8 @@ p {
     color: var(--white-color);
  }
   .home__img {
-    width: 235px;
-    /*height: auto;*/
+    width: 350px;
+    height: auto;
 }
 
 .btn__hero{
@@ -269,7 +269,7 @@ p {
 
 .btn__hero:hover{
     background: var(--first-color);
-    color: black;
+    color: var(--second-color);
 }
 .home__secondary {
 /*Animation*/
@@ -610,19 +610,13 @@ figure .wrap_img {
     grid-template-rows: 1fr;
      height: 100vh;
     }
-    .home__about{
-    grid-template-columns: 4fr 3fr;
-    grid-template-rows: 1fr;
-    height: 50vh;
-    overflow: hidden;
-    }
     .home__primary {
     justify-content: center;
     }
     .home__img img {
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     top: 5%;
     left: 0;
     right: 0;
@@ -632,7 +626,7 @@ figure .wrap_img {
     }
     .btn__hero{
     position: absolute;
-    top: 80%;
+    top: 85%;
     left: auto;
     right: 41%;
     margin: auto;

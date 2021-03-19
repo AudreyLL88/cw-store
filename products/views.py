@@ -14,6 +14,7 @@ from bag.views import remove_from_bag
 def all_products(request):
     """
     Displays all products according to selection.
+    Allows to make search queries and sort products.
 
     Parameters:
     request.
@@ -29,6 +30,7 @@ def all_products(request):
     sort = None
     direction = None
 
+    # search and sort logic
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -105,6 +107,7 @@ def product_detail(request, product_id):
     suggested_products = random.sample(
         suggested_products, min(len(suggested_products), 3))
 
+    # rating math logic.
     if len(reviews) > 0:
         average_rating = 0
         for review in reviews:

@@ -11,7 +11,8 @@ import time
 
 class StripeWH_Handler:
     """
-    Handle Stripe Webhooks.
+    Handle Stripe Webhooks if payment fails/succeeds.
+    Sends confimation emails.
 
     Parameters:
     none

@@ -22,6 +22,8 @@ def contact(request):
 
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)
+
+        # sends emails to admin and user.
         if contact_form.is_valid():
             user_email = contact_form.cleaned_data['email']
             subject = (" Message Reception Confirmation: " +
@@ -41,6 +43,7 @@ def contact(request):
             else:
                 admin_email = settings.DEFAULT_FROM_EMAIL
 
+            # parse the user details from the form.
             last_name = contact_form.cleaned_data['last_name']
             user_name = contact_form.cleaned_data['first_name']
             phone_number = contact_form.cleaned_data['phone_number']

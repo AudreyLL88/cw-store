@@ -17,7 +17,8 @@ import json
 
 
 def _send_alert_email(product):
-    """ _send_alert_email:
+    """ 
+    _send_alert_email:
     Sends email alerts to admin when product low in stock.
 
     Argument:
@@ -48,10 +49,11 @@ def _send_alert_email(product):
 
 @require_POST
 def cache_checkout_data(request):
-    """ cache_checkout_data:
+    """ 
+    cache_checkout_data:
 
     Saves profile data if save_info is valid \
-        and adds it to payment.
+    and adds it to payment.
 
     Arguments:
     request: POST from stripe_elements.js
@@ -76,7 +78,8 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
-    """ checkout:
+    """ 
+    checkout:
 
     Displays checkout page and bag content.
     Sends order to Stripe and saves order if success.
@@ -198,7 +201,8 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-    """ checkout_success:
+    """ 
+    checkout_success:
 
     Displays checkout success page with order details.
 

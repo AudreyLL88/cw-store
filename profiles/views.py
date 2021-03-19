@@ -34,6 +34,8 @@ def profile(request):
                     request, 'Update failed. Please ensure the form is valid.')
     else:
         form = UserProfileForm(instance=profile)
+
+    # creates review history.
     orders = profile.orders.all()
     reviews = Review.objects.filter(reviewer=request.user)
 

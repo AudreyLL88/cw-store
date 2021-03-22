@@ -82,6 +82,16 @@ p {
   font-size: var(--normal-font-size); 
 }
 
+.overlay {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: white;
+  z-index: -2;
+}
+
 /* ------ Toasts ------ */
 
 .message-container {
@@ -597,8 +607,12 @@ figure .wrap_img {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 170px;
     }
+
+    body {
+    height: calc(100vh - 164px);
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -648,7 +662,7 @@ figure .wrap_img {
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 16px;
+        padding-top: 70px;
     }
 
     body {

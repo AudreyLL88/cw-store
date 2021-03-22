@@ -19,7 +19,7 @@ def blog(request):
 
    """
 
-    blogposts = BlogPost.objects.all()
+    blogposts = BlogPost.objects.all().order_by("-date")
 
     context = {
         'blogposts': blogposts,

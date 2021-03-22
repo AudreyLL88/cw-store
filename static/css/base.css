@@ -485,7 +485,7 @@ a.category-badge > span.badge:hover {
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: var(--white-color) /* text-info */
 }
 
 /*------Product Form ------*/

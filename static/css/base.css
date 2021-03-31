@@ -706,6 +706,15 @@ figure .wrap_img {
 
 }
 
+@media (max-width:750px)
+{
+   .home__img 
+   {
+    width: 240px;
+    height: auto;
+    }
+}
+
 @media (max-width:991px)
 {
   .footer [class^=col-]
@@ -750,7 +759,7 @@ figure .wrap_img {
   background-color:var(--first-color);
 }
 
-@media (min-width: 1200px){
+@media (min-width: 200px){
 #about.container,
 #security.container,
 footer.container {

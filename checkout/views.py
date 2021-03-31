@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -17,7 +18,7 @@ import json
 
 
 def _send_alert_email(product):
-    """ 
+    """
     _send_alert_email:
     Sends email alerts to admin when product low in stock.
 
@@ -49,7 +50,7 @@ def _send_alert_email(product):
 
 @require_POST
 def cache_checkout_data(request):
-    """ 
+    """
     cache_checkout_data:
 
     Saves profile data if save_info is valid \
@@ -78,7 +79,7 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
-    """ 
+    """
     checkout:
 
     Displays checkout page and bag content.
@@ -201,7 +202,7 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-    """ 
+    """
     checkout_success:
 
     Displays checkout success page with order details.

@@ -264,7 +264,7 @@ p {
     writing-mode: vertical-rl;
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
-    color: var(--white-color);
+    color: var(--second-color);
  }
   .home__img {
     width: 350px;
@@ -273,7 +273,7 @@ p {
 
 .btn__hero{
     background: var(--second-color);
-    color: white;
+    color: var(--white-color);
     margin-top: 15px;
 }
 
@@ -316,10 +316,6 @@ p {
  height: 100%;
 }
 
-.media-text{
-    background-color: var(--white-color);
-    color: var(--white-color);
-}
 .text__box {
     align-items: center;
     justify-items: center;
@@ -558,7 +554,7 @@ figure .wrap_img {
 {
   margin:20px 0
 }
-.footer h6
+.footer h5
 {
   color: var(--second-color);
   font-size:16px;

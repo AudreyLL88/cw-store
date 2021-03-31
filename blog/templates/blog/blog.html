@@ -26,17 +26,19 @@
                 <div class="col-12 col-md-6 mb-4">  
                     <!-- Image -->         
                     <div class="text-center ">
-                        {% if blogpost.image %} 
-                                <img src="{{ blogpost.image.url }}" alt="{{ blogpost.blog_title }}" class="wrap_img"/>       
-                        {% else %}
-                                <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="wrap_img" />
-                        {% endif %}
-                        <!-- Title -->
-                        <h4 class="mx-2 my-2 text-full">{{ blogpost.blog_title }}</h4>
-                        <!-- Preview -->
-                        <p class="text-full pt-2">{{ blogpost.blog_preview }}</p>
-                        <!-- Author -->
-                        <small class="px-2 text-muted">Posted by: {{ blogpost.author }} <span class="date"> on: {{ blogpost.date }}</span></small>
+                        <a href="{% url 'blog_detail' blogpost.id %}">
+                            {% if blogpost.image %} 
+                                    <img src="{{ blogpost.image.url }}" alt="{{ blogpost.blog_title }}" class="wrap_img"/>       
+                            {% else %}
+                                    <img src="{{ blogpost.image_url }}" alt="{{ blogpost.blog_title }}" class="wrap_img" />
+                            {% endif %}
+                            <!-- Title -->
+                            <h4 class="mx-2 my-2 text-full">{{ blogpost.blog_title }}</h4>
+                            <!-- Preview -->
+                            <p class="text-full pt-2">{{ blogpost.blog_preview }}</p>
+                            <!-- Author -->
+                            <small class="px-2 text-muted">Posted by: {{ blogpost.author }} <span class="date"> on: {{ blogpost.date }}</span></small>
+                        </a>
                     </div>
                     <!-- Button -->
                     <div class="text-center mt-4 mb-3">

@@ -1,0 +1,1 @@
+web: gunicorn cw_store.wsgi:application

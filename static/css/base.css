@@ -592,6 +592,13 @@ figure .wrap_img {
   }
 }
 
+/* Avoid overflow/white screen in authentification templates */
+@media (min-width:800px) {
+    .allauth-container {
+      height: 100vh;
+  }
+}
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -608,10 +615,6 @@ figure .wrap_img {
 
     body {
     height: calc(100vh - 164px);
-  }
-
-  .allauth-container {
-      height: 100vh;
   }
 }
 

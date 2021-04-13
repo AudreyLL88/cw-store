@@ -19,7 +19,7 @@
 <p>{% blocktrans with site.name as site_name %}Please sign in with your registered details or with your Google Account.{% endblocktrans %}</p>
 
 {% get_providers as socialaccount_providers %}
-<a class="login-google " href="{% provider_login_url 'google' %}">
+<a href="{% provider_login_url 'google' %}">
     Continue with Google</a>
 
 <p class="my-3">or</p>

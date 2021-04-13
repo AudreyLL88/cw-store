@@ -16,16 +16,19 @@
 {% get_providers as socialaccount_providers %}
 
 
-{% if socialaccount_providers %}
+<p>{% blocktrans with site.name as site_name %}Please sign in with your registered details or with your Google Account.{% endblocktrans %}</p>
+
+{% get_providers as socialaccount_providers %}
+<a class="login-google " href="{% provider_login_url 'google' %}">
+    Continue with Google</a>
+
+<p class="my-3">or</p>
 
 {% include "socialaccount/snippets/login_extra.html" %}
 
-{% include "socialaccount/snippets/login_extra.html" %}
-
-
+{% else %}
 <p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-
+<a class="blue-text" href="{{ signup_url }}">Register</a> first.{% endblocktrans %}</p>
 {% endif %}
 <form class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}

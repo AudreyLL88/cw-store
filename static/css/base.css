@@ -52,6 +52,7 @@
 
 html{
     scroll-behavior: smooth;
+    min-height: -webkit-fill-available;
 }
 
 body {
@@ -59,6 +60,7 @@ body {
   font-family: var(--body-font);
   font-weight: initial;
   height: calc(100vh - 164px);
+  min-height: -webkit-fill-available;
 }
 
 h1, h2 {

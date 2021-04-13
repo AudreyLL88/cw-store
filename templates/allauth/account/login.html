@@ -19,7 +19,7 @@
 <p>{% blocktrans with site.name as site_name %}Please sign in with your registered details or with your Google Account.{% endblocktrans %}</p>
 
 {% get_providers as socialaccount_providers %}
-<a href="{% provider_login_url 'google' %}" class="btn btn-clear"> <i class="fab fa-google"></i>Continue with Google</a>
+<div class="g-signin2" data-onsuccess="onSignIn"><a href="{% provider_login_url 'google' %}"></a></div>
 
 <p class="my-3">or</p>
 
@@ -38,4 +38,8 @@
   </p>
 </form>
 
+{% endblock %}
+
+{% block postloadjs %}
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 {% endblock %}

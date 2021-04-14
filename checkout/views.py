@@ -30,15 +30,12 @@ def _send_alert_email(product):
     """
 
     superusers = User.objects.filter(is_superuser=True).values_list('email')
-    print(superusers)
     subject = render_to_string(
         'checkout/admin_email_alerts/admin_email_alert_subject.txt',
         {'product': product})
-    print(subject)
     body = render_to_string(
         'checkout/admin_email_alerts/admin_email_alert_body.txt',
         {'product': product, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-    print(body)
 
     send_mail(
         subject,

@@ -29,7 +29,7 @@ def _send_alert_email(product):
     Nothing.
     """
 
-    superusers = User.objects.filter(is_superuser=True).values_list('email')
+    superusers = User.objects.filter(is_superuser=True).values_list('email')[0]
     subject = render_to_string(
         'checkout/admin_email_alerts/admin_email_alert_subject.txt',
         {'product': product})

@@ -29,7 +29,7 @@ def _send_alert_email(product):
     Nothing.
     """
 
-    superusers = User.objects.filter(is_superuser=True).values_list('email')[0]
+    superusers = User.objects.filter(is_superuser=True).values_list('email')
     subject = render_to_string(
         'checkout/admin_email_alerts/admin_email_alert_subject.txt',
         {'product': product})
@@ -37,12 +37,13 @@ def _send_alert_email(product):
         'checkout/admin_email_alerts/admin_email_alert_body.txt',
         {'product': product, 'contact_email': settings.DEFAULT_FROM_EMAIL})
 
-    send_mail(
-        subject,
-        body,
-        settings.DEFAULT_FROM_EMAIL,
-        superusers
-    )
+    for superuser in superusers:
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            superuser
+        )
 
 
 @require_POST

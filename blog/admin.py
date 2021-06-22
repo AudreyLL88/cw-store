@@ -6,11 +6,13 @@ from .models import BlogPost, BlogComment
 
 class BlogCommentInline(admin.TabularInline):
     """ Allows view/edit of blog comments from Blog detail page """
+
     model = BlogComment
 
 
 class BlogAdmin(admin.ModelAdmin):
     """ Creates the admin interface for Blog posts """
+
     list_display = (
         'blog_title',
         'author',
@@ -25,6 +27,7 @@ class BlogAdmin(admin.ModelAdmin):
 
 class BlogCommentAdmin(admin.ModelAdmin):
     """ Creates the admin interface for Blog Comment """
+    
     list_display = (
         'comment_title',
         'comment',

@@ -78,3 +78,4 @@ def contact(request):
     }
     template = 'contact/contact.html'
     return render(request, template, context)
+

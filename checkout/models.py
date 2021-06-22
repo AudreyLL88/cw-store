@@ -63,6 +63,7 @@ class Order(models.Model):
 
         Return: self
         """
+
         self.order_total = self.lineitems.aggregate(
                 Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
@@ -79,6 +80,7 @@ class Order(models.Model):
 
         Return: self.
         """
+
         if not self.order_number:
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
@@ -116,6 +118,7 @@ class OrderLineItem(models.Model):
 
         Return: Self.
         """
+        
         self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
 

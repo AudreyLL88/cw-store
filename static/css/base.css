@@ -594,7 +594,8 @@ figure .wrap_img {
 
 /* Avoid overflow/white screen in authentification templates */
 @media (min-width:800px) {
-    .allauth-container {
+    .allauth-container,
+    .bag-container {
       height: 100vh;
   }
 }
@@ -767,5 +768,8 @@ figure .wrap_img {
 #security.container,
 footer.container {
     max-width: 100% !important;
+}
+.qty-form {
+ width: 70%;
 }
 }

@@ -66,7 +66,7 @@ def add_to_bag(request, item_id):
                         request,
                         f'Updated size {size.upper()} '
                         f'{product.name} quantity to '
-                        f'{bag[item_id]["items_by_size"][size]}')
+                        f'{bag[item_id] ["items_by_size"][size]}')
             else:
                 bag[item_id]['items_by_size'][size] = quantity
                 messages.success(

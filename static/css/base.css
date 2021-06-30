@@ -595,7 +595,12 @@ figure .wrap_img {
 /* Avoid overflow/white screen in authentification templates */
 @media (min-width:800px) {
     .allauth-container,
-    .bag-container {
+    .bag-container,
+    .comment-container,
+    .checkout-container,
+    .review-container,
+    .product-container,
+    .profile-container {
       height: 100vh;
   }
 }

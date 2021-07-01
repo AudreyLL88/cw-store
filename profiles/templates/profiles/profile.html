@@ -102,47 +102,25 @@
                                 <th>Actions</th>
                             </tr>
                         </thead>
+                        {% for review in reviews %}
                         <tbody>
-                            {% for review in reviews %}
-                                <tr>
-                                    <td>
-                                       {{ review.product }}
-                                    </td>
-                                    <td>
-                                        {{ review.review|truncatechars:10 }}
-                                    </td>
-                                    <td>                                                                                           
-                                        <p class="small">{{ review.date }}</p>
-                                    </td>
-                                    <td>{{ review.rating }} <i class="fas fa-star"></i></td>
-                                    <td class="d-flex align-items-start">
-                                        <button type="button" class=" btn btn-full text-full btn-sm mx-1" data-toggle="modal" data-target="#deleteReview-{{ review.id }}" aria-label="delete"><i class="fas fa-trash-alt fa-sm"></i></button>
-                                        <a href="{% url 'edit_review' review.id %}" class=" btn btn-clear btn-sm mx-1" aria-label="edit"><i class="fas fa-edit fa-sm"></i></a>
-
-                                        <!-- Modal delete review     -->
-                                        <div class="modal fade" id="deleteReview-{{ review.id }}" tabindex="-1" aria-labelledby="deleteLabel-{{ review.id }}" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h3 class="modal-title text-full font-weight-bold" id="deleteLabel">Do you want to delete your review?</h3>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <p>Are you sure that your want to delete your review? This action cannot be undone.</p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
-                                                        <a href="{% url 'delete_review' review.id %}" class="btn btn-danger ml-3">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            {% endfor %}
+                            <tr>
+                                <td>
+                                    {{ review.product }}
+                                </td>
+                                <td>
+                                    {{ review.review|truncatechars:10 }}
+                                </td>
+                                <td>                                                                                           
+                                    <p class="small">{{ review.date }}</p>
+                                </td>
+                                <td>{{ review.rating }} <i class="fas fa-star"></i></td>
+                                <td class="d-flex align-items-start">
+                                    <a href="{% url 'edit_review' review.id %}" class=" btn btn-clear btn-sm mx-1" aria-label="edit"><i class="fas fa-edit fa-sm"></i></a>
+                                </td>
+                            </tr>
                         </tbody>
+                        {% endfor %}
                     </table>
                 </div>
             </div>

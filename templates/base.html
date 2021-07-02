@@ -15,7 +15,9 @@
     {% endblock %}
 
     {% block corecss %}
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
@@ -23,27 +25,36 @@
     {% endblock %}
 
     {% block corejs %}
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- Popper -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/e55d87b16d.js" crossorigin="anonymous"></script>
+    <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
     {% block extra_js %}
     {% endblock %}
-
+    <!-- Title -->
     <title>Chelsea Wolfe Store {% block extra_title %} {% endblock %}</title>
   </head>
   <body>
     <header class="container-fluid fixed-top">
+        <!-- Delivery Banner -->
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-full text-white">
                 <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4> 
             </div>
         </div>
+        <!-- Main Navigation bar -->
         <div id="topnav" class="row pt-lg-2 d-none d-lg-flex bg-white">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <form method="GET" action="{% url 'products' %}">
@@ -59,11 +70,13 @@
                     </div>
                 </form>
             </div>
+            <!-- Logo -->
             <div class="col-12 col-lg-4 m-auto py-1 py-lg-0 text-lg-center">
                 <a href="{% url 'home' %}" class="">
                     <h2 class="nav__logo">Chelsea Wolfe</h2>
                 </a>
             </div>
+            <!-- Dropdown menu -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
@@ -87,6 +100,7 @@
                             {% endif %}
                         </div>
                     </li>
+                    <!-- Bag -->
                     <li class="list-inline-item">
                         <a class="{% if grand_total %} text-info font-weight-bold {% else %} text-full {% endif %} nav-link" href="{% url 'view_bag' %}">
                             <div class="text-center">
@@ -104,6 +118,7 @@
                 </ul>
             </div>
         </div>
+        <!-- Mobile Main navigation bar -->
         <div class="row">
             <nav class="navbar navbar-expand-lg w-100 nav__bg">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -116,6 +131,7 @@
     </header>
     
     {% if messages %}
+    <!-- Toasts -->
     <div class="message-container">
         {% for message in messages %}
             {% with message.level as level %}
@@ -138,6 +154,7 @@
 
    {% block content %}
    {% endblock %}
+    <!-- Footer inspired by Ol Hilton https://codepen.io/olhilton/pen/dXaqxE -->
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -145,6 +162,7 @@
                     <h5>About Us</h5>
                     <p class="text-justify">We sell the merchandise linked with the artist Chelsea Wolfe and support her fan community. Check out our blog !</p>
                 </div>
+                <!-- Social Media -->
                 <div class="col-xs-6 col-md-4">
                     <h5>Social Media</h5>
                     <ul class="social-icons">
@@ -155,6 +173,7 @@
                         <li><a class="spotify" href="https://open.spotify.com/artist/6ZK2nrW8aCTg8Bid7I7N10" target="_blank" rel="noreferrer" aria-label="spotify"><i class="fab fa-spotify"></i></a></li>
                     </ul>
                 </div>
+                <!-- Contact Button -->
                 <div class="col-xs-6 col-md-4">
                     <h5>Any Questions ?</h5>
                     <ul class="footer-links">
@@ -164,6 +183,7 @@
             </div>
             <hr>
         </div>
+        <!-- Copyright -->
         <div class="container">
             <div class="row">
                 <div class="col-12">

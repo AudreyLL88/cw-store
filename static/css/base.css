@@ -707,7 +707,8 @@ figure .wrap_img {
         padding: .375rem .375rem;
     }
 
-    .btn.btn-full.rounded-0.btn-lg {
+    .btn.btn-full.rounded-0.btn-lg,
+    .btn.btn-clear.rounded-0.btn-lg.btn-bag {
         padding: .375rem .375rem;
         font-size: .75rem;
     }

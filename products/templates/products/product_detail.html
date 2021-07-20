@@ -99,7 +99,7 @@
                 <div class="pb-5 price-button">
                     <a href="{% url 'products' %}" class="btn btn-clear rounded-0 mt-5">
                         <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
+                            <i class=" price-icon fas fa-chevron-left"></i>
                         </span>
                         <span class="text-uppercase text-full">Keep Shopping</span>
                     </a>
@@ -116,19 +116,21 @@
                 <div class="bg-white rounded shadow-sm p-4 mb-4 clearfix">
                     <h5 class="mb-0 mb-4 review-header text-full">Ratings and Reviews</h5>
                     <div class="row align-items-start">
-                        <div class="col-lg-4 col-sm-12 review-total">
+                        <div class="col-lg-4 col-sm-4 review-total">
                             <h4 class="text-full"><strong>{{ product.reviews.count }}</strong></h4>
-                            <h6>total review</h6>
+                            <h6 class="my-3">total review</h6>
                         </div>
-                        <div class="col-lg-4 col-sm-12 review-average">
+                        <div class="col-lg-4 col-sm-4 col-xs-6 review-average">
                             {% if product.reviews.count > 0 %}
                                 <h5 class="text-full"><strong>{{ average_rating }} /5 <i class="far fa-star"></i></strong></h5>
+                                <h6 class="my-3">Rating</h6>
                             {% else %}
                                  <h5 class="text-full"><strong>{{ average_rating }}</strong></h5>
+                                 <h6 class="my-3">Rating</h6>
                             {% endif %}
                         </div>
-                            <div class="col-lg-4 col-sm-12 review-btn-up">
-                                <a href="{% url 'review_product' product.id %}" type="button" class="btn btn-lg btn-clear">WRITE A REVIEW</a>
+                            <div class="col-lg-4 col-sm-4 review-btn-up">
+                                <a href="{% url 'review_product' product.id %}" type="button" class="btn btn-clear rounded-0 btn-lg btn-bag">WRITE A REVIEW</a>
                             </div>
                         </div>
                     </div>

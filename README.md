@@ -291,6 +291,9 @@ I made the following schema with [**QuickDBD**](https://www.quickdatabasediagram
 
 **Profile App**
 
+![Profileapp](README_IMG/profileapp_readme.gif)
+
+
 * This feature allows the user to create a custom profile on the website and be given registered user priviledges (comments, reviews, checkout details)
 1. Registration
 * The user can register to the website through the Register form page. Every account requests an email address , a username and a password.

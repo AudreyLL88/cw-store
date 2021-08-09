@@ -1,5 +1,7 @@
 # Chelsea Wolfe Online Store #
 ---
+[**View the full project here**](https://chelsea-wolfe-store.herokuapp.com/)
+
 ![Hero Screenshot](README_IMG/hero_readme.png)
 
 ## Contents ##
@@ -572,7 +574,7 @@ All products images were taken from the offical Chelsea Wolfe US and EU stores:
 - https://www.hellomerch.com/collections/chelsea-wolfe
 - https://evilgreed.net/collections/chelsea-wolfe
 
-**Code Tutorials**
+**Code Tutorials Credits**
 
 * This website was made following the tutorials of Code institute for the Boutique Ado project by Chris Zielinski.
 
@@ -585,6 +587,9 @@ All products images were taken from the offical Chelsea Wolfe US and EU stores:
 
 **Many thanks to:**
 
-* 
+* My husband Ivar Dahlberg for his help and guidance all throughout this project.
+* The Code Institute team for their support.
+* The Slack Community for the careful reviews and help.
+* SATS Sweden sports center for keeping me sane between the bugs.
 
 **Site for educational purposes only!** (for now)

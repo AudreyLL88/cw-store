@@ -1,6 +1,6 @@
 # Chelsea Wolfe Online Store #
 ---
-![Hero Screenshot]()
+![Hero Screenshot](README_IMG/hero_readme.png)
 
 ## Contents ##
 ---
@@ -128,6 +128,8 @@ The Chelsea Wolfe store is to be at the image of the artist (which I found to be
 
 Here is my palette :
 
+![Palette](README_IMG/palette_readme.png)
+
 <a name="fonts"></a>
 
 ### Fonts ###
@@ -217,6 +219,8 @@ I made the following schema with [**QuickDBD**](https://www.quickdatabasediagram
 
 **Navigation bars**
 
+![navbar](README_IMG/navbar_readme.png)
+
 * This feature allows the user to navigate through the website easily and without conflicts.
 
 * This project has two responsive navigation bars present on all pages:
@@ -231,6 +235,8 @@ I made the following schema with [**QuickDBD**](https://www.quickdatabasediagram
 
 **Home App**
 
+![Homeapp](README_IMG/homeapp_readme.gif)
+
 * This features informs in an attractive way the user of the content of the website and it's safety. It gives an introduction about the artist as well as the products .
 
 * This feature focuses on the index page only.
@@ -239,10 +245,14 @@ I made the following schema with [**QuickDBD**](https://www.quickdatabasediagram
 
 **Shopping bag App**
 
+![Bagapp](README_IMG/bagapp_readme.gif)
+
 * This feature allows the user to add/adjust/delete different products to the shopping bag and view the total price and details in the bag.
 * When a product is added, a preview of the shopping bag is displayed in a toast and the total price/shipping price is updated.
 
 **Checkout App**
+
+![Checkoutapp](README_IMG/checkout_readme.gif)
 
 * This feature allows the user to safely buy the selection of item previously put in the bag thanks to **Stripe**.
 * The user doesn't need to be logged in to buy products. If logged in the shipping details will be filled from the details given in the user profile. 
@@ -254,6 +264,8 @@ I made the following schema with [**QuickDBD**](https://www.quickdatabasediagram
 
 
 **Product App**
+
+![Productapp](README_IMG/productapp_readme.gif)
 
 * This feature allows the user to see all products and their details on the website. The user can also read product reviews as well as Add/Edit/Delete their product review if they are logged in. It also allows the admin to Add/Edit/Delete products in the database.
 
@@ -300,6 +312,9 @@ I made the following schema with [**QuickDBD**](https://www.quickdatabasediagram
 
 **Blog App**
 
+![Blogapp](README_IMG/blogapp_readme.gif)
+![Blogpage](README_IMG/blogpage_readme.gif)
+
 * This feature allows the user to be informed of the current artist situation and actions on the webshop as well as communicating with the whole website's community.
 
 1. Blog page:
@@ -318,6 +333,8 @@ I made the following schema with [**QuickDBD**](https://www.quickdatabasediagram
 
 **Contact App**
 
+![Contactapp](README_IMG/contact_readme.png)
+
 * This feature allows the user to contact the website's admin and send queries.
 
 * The Contact page allows the user to send a written query to the admin. The query is stored in the database and two email alerts are sent: one to the user to confirm that the message was received and one to the admin to signal the reception of a new query. The alert sent to the admin contains all informations given by the user in the contact form.
@@ -331,7 +348,7 @@ I made the following schema with [**QuickDBD**](https://www.quickdatabasediagram
 * The possibility to add different stock per product sizes.
 * Answering messages sent through contact form via the website.
 * Sale prices.
-* Social Media login.
+* Social Media login (ex: Google, Facebook...).
 
 ## Deployment ##
 ---

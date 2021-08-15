@@ -298,7 +298,7 @@ def edit_review(request, review_id):
     """
 
     review = get_object_or_404(Review, pk=review_id)
-    if request.user == review.reviewer:
+    if request.user == review.reviewer or request.user.is_superuser:
         if request.method == 'POST':
             form = ReviewForm(request.POST, instance=review)
             if form.is_valid():
@@ -340,7 +340,7 @@ def delete_review(request, review_id):
 
     review = get_object_or_404(Review, pk=review_id)
 
-    if request.user == review.reviewer:
+    if request.user == review.reviewer or request.user.is_superuser:
         review.delete()
         messages.success(request, 'Your review is deleted !')
         return redirect(reverse('products'))

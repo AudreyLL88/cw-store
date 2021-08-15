@@ -154,7 +154,7 @@ def delete_blogpost(request, blogpost_id):
 
     blogpost = get_object_or_404(BlogPost, pk=blogpost_id)
 
-    if request.user == blogpost.author:
+    if request.user == blogpost.author or request.user.is_superuser:
         blogpost.delete()
         return redirect(reverse('blog'))
     else:
@@ -220,7 +220,7 @@ def delete_comment(request, comment_id):
 
     comment = get_object_or_404(BlogComment, pk=comment_id)
 
-    if request.user == comment.comment_user:
+    if request.user == comment.comment_user or request.user.is_superuser:
         comment.delete()
         messages.success(request, 'Your comment is deleted !')
         return redirect(reverse('blog'))
@@ -245,7 +245,7 @@ def edit_comment(request, comment_id):
     """
 
     comment = get_object_or_404(BlogComment, pk=comment_id)
-    if request.user == comment.comment_user:
+    if request.user == comment.comment_user or request.user.is_superuser:
         if request.method == 'POST':
             form = CommentForm(request.POST, instance=comment)
             if form.is_valid():

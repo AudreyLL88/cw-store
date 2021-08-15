@@ -73,6 +73,8 @@ def add_blogpost(request):
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
+            blogpost = form.save(commit=False)
+            blogpost.author = request.user
             blogpost = form.save()
             messages.success(request, 'Successfully added blog post!')
             return redirect(reverse('blog_detail', args=[blogpost.id]))

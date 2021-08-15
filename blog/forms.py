@@ -8,7 +8,13 @@ class BlogForm(forms.ModelForm):
 
     class Meta:
         model = BlogPost
-        fields = '__all__'
+        fields = (
+            'blog_title',
+            'blog_preview',
+            'blog_content',
+            'image_url',
+            'image',
+            )
 
     image = forms.ImageField(
                 label='Image', required=False, widget=CustomClearableFileInput)

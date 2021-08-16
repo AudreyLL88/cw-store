@@ -574,6 +574,8 @@ All products images were taken from the offical Chelsea Wolfe US and EU stores:
 - https://www.hellomerch.com/collections/chelsea-wolfe
 - https://evilgreed.net/collections/chelsea-wolfe
 
+The image used on the 404 and 505 pages is by [**Radostina Georgieva**](https://dribbble.com/shots/12124455-Error-404-Illustration)
+
 **Code Tutorials Credits**
 
 * This website was made following the tutorials of Code institute for the Boutique Ado project by Chris Zielinski.

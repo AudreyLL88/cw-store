@@ -10,6 +10,6 @@ const sr = ScrollReveal({
     distance: '80px',
     duration: 2000,
     reset: true
-})
-sr.reveal('.post-header', {delay: 400})
-sr.reveal('.post-form', {delay: 600, interval: 200})
+});
+sr.reveal('.post-header', {delay: 400});
+sr.reveal('.post-form', {delay: 600, interval: 200});

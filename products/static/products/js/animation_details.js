@@ -12,12 +12,12 @@ const sr = ScrollReveal({
     distance: '80px',
     duration: 2000,
     reset: true
-})
+});
 
 // Review section.
-sr.reveal('.review-header', {delay: 200})
-sr.reveal('.review-total', {delay: 300})
-sr.reveal('.review-average', {delay: 400})
-sr.reveal('.review-btn-up', {delay: 500})
-sr.reveal('.review-title-detail', {delay: 200})
-sr.reveal('.review-detail', {delay: 400})
+sr.reveal('.review-header', {delay: 200});
+sr.reveal('.review-total', {delay: 300});
+sr.reveal('.review-average', {delay: 400});
+sr.reveal('.review-btn-up', {delay: 500});
+sr.reveal('.review-title-detail', {delay: 200});
+sr.reveal('.review-detail', {delay: 400});

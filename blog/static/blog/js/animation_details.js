@@ -12,11 +12,11 @@ const sr = ScrollReveal({
     distance: '80px',
     duration: 2000,
     reset: true
-})
+});
 
-sr.reveal('.comment-header', {delay: 200})
-sr.reveal('.comment-total', {delay: 300})
-sr.reveal('.comment-average', {delay: 400})
-sr.reveal('.comment-btn-up', {delay: 500})
-sr.reveal('.comment-title-detail', {delay: 200})
-sr.reveal('.comment-detail', {delay: 400})
+sr.reveal('.comment-header', {delay: 200});
+sr.reveal('.comment-total', {delay: 300});
+sr.reveal('.comment-average', {delay: 400});
+sr.reveal('.comment-btn-up', {delay: 500});
+sr.reveal('.comment-title-detail', {delay: 200});
+sr.reveal('.comment-detail', {delay: 400});

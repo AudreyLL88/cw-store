@@ -4,9 +4,9 @@ const sr = ScrollReveal({
         distance: '80px',
         duration: 2000,
         reset: true
-    })
-sr.reveal('.product-header', {delay: 400})
-sr.reveal('.product-form', {delay: 600, interval: 200})
+    });
+sr.reveal('.product-header', {delay: 400});
+sr.reveal('.product-form', {delay: 600, interval: 200});
 
 // Image text set-up in add/edit product forms.
 $('#new-image').change(function() {

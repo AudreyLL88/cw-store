@@ -33,12 +33,11 @@ I used the [**W3C CSS Validator Service**]() to validate my css files and it pas
 **Javascript**
 
 I used [**JSHint**]() to validate my .js files.
-It raised the following errors:
+It only raised a few missing semicolons.
 
 **Python**
 
 I used the Gitpod built-in linter and [**PEP8**] to validate my Python files.
-It raised the following issues:
 
 **Google Lighthouse**
 

@@ -309,3 +309,7 @@ Implementing sizes on all clothing items was straightfoward enough, but disablin
 **5. Multiple stock update email for admins at checkout**
 
 One of the nice features of this project is that when a product is low (under 3 units) in stock when the customer goes through checkout, it automatically sends a reminder to the admins to add more products to the stocks to avoid it being completely out. Unfortunately it wasn't working on my deployed version because of the recipients ' list format which was hard to test because the mailing service only works on the deployed version and not locally. I patched it with a for loop and the error is now gone but this code would need more investigation and time to be completely functionnal. My speculation is that it most likely needs tuples of addresses and names.
+
+**6. Email Plateform**
+
+After Gitpod deleted my workspace (I forgot to pin it) and I had to reinstall everything, the verification, contact and checkout emails where not sending anymore. I fixed it by creating a new email account and a new password app in gmail. 

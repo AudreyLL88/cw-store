@@ -41,6 +41,10 @@ I used the Gitpod built-in linter and [**PEP8**] to validate my Python files.
 
 **Google Lighthouse**
 
+![lighthous](README_IMG/lighthouse.png)
+
+I tested this app on Google Lighthouse and it passed all test.
+
 <a name="colour"></a>
 ## Colour Contrast Checking ## 
 ---

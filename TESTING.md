@@ -23,12 +23,12 @@
 
 **HTML**
 
-I used the [**W3C Markup Validator Service**]() to validate all the HTML of my templates.
+I used the [**W3C Markup Validator Service**](https://validator.w3.org/) to validate all the HTML of my templates.
 It raised the following issues:
 
 **CSS**
 
-I used the [**W3C CSS Validator Service**]() to validate my css files and it passed all tests.
+I used the [**W3C CSS Validator Service**](https://jigsaw.w3.org/css-validator/) to validate my css files and it passed all tests.
 
 **Javascript**
 

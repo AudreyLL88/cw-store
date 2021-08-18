@@ -139,13 +139,13 @@
                         <div class=" pt-4 pb-4">
                             {% if product.reviews.count > 0 %}
                                 {% for review in product.reviews.all %}
-                                    <div class="row align-items-start review-detail">
+                                    <div class="row align-items-start review-detail mt-3">
                                         <div class="col-4">
                                             <h6 class="mb-1 text-full">{{ review.reviewer }}</h6>
                                             <p class="text-gray text-full">{{ review.date }}</p>
                                             <p class="text-gray text-full">France</p>
                                         </div>
-                                        <div class="col-8">
+                                        <div class="col-8 pl-3">
                                             <h4 class="mb-3 text-full">
                                                 {{ review.rating }} <i class="far fa-star"></i>
                                             </h4>
@@ -160,7 +160,6 @@
                                             {% endif %}
                                         </div>
                                     </div>
-                                </div>
 
                                 <!-- Delete review modal -->
                                 <div class="modal fade" id="deleteReview-{{ review.id }}" tabindex="-1" aria-labelledby="deleteLabel-{{ review.id }}" aria-hidden="true">

@@ -58,7 +58,7 @@ Please [**click here**](https://docs.google.com/spreadsheets/d/1Jjwrl0Z5zI8jjJYm
 * To sell merchandise associated with the artist Chelsea Wolfe.
 * To match the design and atmosphere of the artist and offer a website that is easy to navigate and free of confusion.
 * To become another source of revenue for the music artist.
-* To become a plateform where fans can support the artist and follow the artist's news on the blog.
+* To become a platform where fans can support the artist and follow the artist's news on the blog.
 * To allow users to leave reviews on products to control product quality and popularity.
 * To create a stock of products to be sold online and keep track of the sales as an admin.
 * To be able to create/update/delete products and their infomations as an admin
@@ -67,10 +67,10 @@ Please [**click here**](https://docs.google.com/spreadsheets/d/1Jjwrl0Z5zI8jjJYm
 #### User Goals ####
 
 * To navigate the website easily and understand its purpose.
-* To find products and their informations (price, size, category, availability) fast and easy through a website search or through the navigation bar.
+* To find products and their information (price, size, category, availability) fast and easy through a website search or through the navigation bar.
 * To be able to buy products online as a guest or a registered user.
-* To receive a confirmation email with all relevant informations.
-* To be able to create/update/delete my personal informations.
+* To receive a confirmation email with all relevant information.
+* To be able to create/update/delete my personal information.
 * To see a history of my previous purchases.
 * To leave a review of a previously bought product and leave comments on the blog.
 * To contact customer services through the website.
@@ -82,17 +82,17 @@ The users should be able to conduct the following actions on the website:
 
 * Use the navigation bar effectively on all devices.
 * Conduct a product search by category, text and price in the search bar and get relevant results.
-* Check product informations when clicked.
+* Check product information when clicked.
 * Add/remove items from the shopping bag.
 * Add more than one item in the shopping bag.
 * Get an update of the bag status each time one of the actions mentionned above happens.
 * Purchase products securely through a payment platform.
 * Subscribe to the newsletter.
-* Create/Update/Save/Delete their profile account with personal informations.
+* Create/Update/Save/Delete their profile account with personal information.
 * Read reviews/comments as guest users, post reviews/comments as registered users.
 
 As an Admin:
-* Add, edit, delete a product and its informations.
+* Add, edit, delete a product and its information.
 * Delete reviews that do not meet website policies.
 * Create/Update sales product and special prices.
 
@@ -105,9 +105,9 @@ To create the wireframes for this project, I used the tool [**Balsamiq**](https:
 
 [**Click here to discover the Wireframes**](README_IMG/wireframe_ms4.pdf)
 
-* As you can see in the wireframes, I initially wanted to have a ticketing plateform but decided to replace it by a blog.
+* As you can see in the wireframes, I initially wanted to have a ticketing platform but decided to replace it with a blog.
 * I also removed the about page after talking with my mentor.
-* I changed a few things (number of product displayed per row...) for aesthetics reasons.
+* I changed a few things (number of products displayed per row...) for aesthetics reasons.
 
 <a name="design"></a>
 
@@ -119,7 +119,7 @@ The Chelsea Wolfe store is to be at the image of the artist (which I found to be
 
 ##### Colors ####
 
-* It was fairly easy to find a color scheme for this project as the artist Chelsea Wolfe already has a very strong visual identity and is known for it. I went to a Modern Pastel Gothic color scheme that fitted the hero picture with a light pick and a pure white as a main colors to capture the user's attention and turquoise and dark grey as secondary colors for contrast.
+* It was fairly easy to find a color scheme for this project as the artist Chelsea Wolfe already has a very strong visual identity and is known for it. I went to a Modern Pastel Gothic color scheme that fitted the hero picture with a light pick and a pure white as a main colors to capture the user's attention and dark grey as secondary colors for contrast.
 
 Here is my palette :
 
@@ -145,8 +145,8 @@ Here is my palette :
 
 1. All required form inputs display a warning message as a tooltip if the field is filled incorrectly.
 2. If a non-registered user tries to leave a comment or a review, they will be automatically redirected to the sign-in page.
-3. Add to bag button disabled if the product is out of stock.
-4. If a user tries to put a number of a single product greater than the stock, a warning message will be displayed and the add to bag action is cancelled.
+3. Add to bag button is disabled if the product is out of stock.
+4. If a user tries to add a number of a single product greater than the stock, a warning message will be displayed and the add to bag action is cancelled.
 5. Every time a form is submitted (search, product, review, comment), the user is informed of the action success/failure through a toast message.
 6. Implementation of webhooks to create order status in the database and avoid any misstep from the user during checkout.
 7. Custom error pages redirecting to homepage.
@@ -201,7 +201,7 @@ Here is my palette :
 
 * This feature allows the user to consult the website from any of their devices.
 
-* All templates of this project have been build with the responsive framework Bootstrap 4. I also used targeted media queries to make this project responsive on all screen sizes.
+* All templates of this project have been built with the responsive framework Bootstrap 4. I also used targeted media queries to make this project responsive on all screen sizes.
 
 **Navigation bars**
 
@@ -227,7 +227,7 @@ Here is my palette :
 
 * This feature focuses on the index page only.
 * The landing page includes a hero animation made with the GSAP library, a call to action button to visit the store, a featured product section with animated cards and a security banner.
-* The featured product section showcases selected on random from the product collection.
+* The featured product section showcases products selected on random from the product collection.
 
 **Shopping bag App**
 
@@ -268,11 +268,11 @@ Here is my palette :
 
 4. Suggested Product:
 * This feature is located at the bottom of the product details page and is implemented to encourage the customer to look into more store products.
-* It generates maximum 4 product cards of the same product category than the product details viewed by the user.
+* It generates maximum 4 product cards of the same product category as the product details viewed by the user.
 
 5. Product management:
 * If the user is logged in as an admin, they will have the possibility to navigate to the Product management page (through the profile dropdown menu in the main navigation bar) and have the possibility to add a product to the database by filling the add product form. Images can be selected directly from the user's computer and not only as url linked images.
-* The admin only can edit and/or delete any product by navigating on a product detail page and click on the edit/delete links.The edit link redirects to a edit form while the delete link triggers a confirmation modal and permanently deletes the product from the database if "Delete" is clicked in the modal.
+* Only the admins can edit and/or delete any product by navigating on a product detail page and click on the edit/delete links.The edit link redirects to a edit form while the delete link triggers a confirmation modal and permanently deletes the product from the database if "Delete" is clicked in the modal.
 
 
 **Profile App**
@@ -280,9 +280,9 @@ Here is my palette :
 ![Profileapp](README_IMG/profileapp_readme.gif)
 
 
-* This feature allows the user to create a custom profile on the website and be given registered user priviledges (comments, reviews, checkout details)
+* This feature allows the user to create a custom profile on the website and be given registered user privileges (comments, reviews, checkout details)
 1. Registration
-* The user can register to the website through the Register form page. Every account requests an email address , a username and a password.
+* The user can register to the website through the Register form page. Every account requests an email address, a username and a password.
 * The email and password need to be confirmed twice to avoid typos.
 * A verification email is sent to the user's email to avoid errors. That email contains a security link that opens a "confirmed email" page on the website. The user is added to the database and is allowed to complete their profile on their new profile page.
 
@@ -295,7 +295,7 @@ Here is my palette :
 
 4. Profile Page:
 * The profile page is personal and contains:
-    - A editable personal information form including the shipping details that will be remember at checkout if logged in.
+    - An editable personal information form including the shipping details that will be remember at checkout if logged in.
     - An order history with order number, date and order details. The order number links to the order confirmation page.
     - A review history with date, review and rating. the user can delete or edit their reviews from there.
 
@@ -313,12 +313,12 @@ Here is my palette :
 * This page display the full blog post (title, image, text, author and date) as well as the comment section. All users can read the blog post and comments but need the be registered and logged in to comment.
 
 3. Comment section
-* When logged in the user can edit and delete their comment directly from the comment section.The edit link redirects to a edit form while the delete link triggers a confirmation modal and permanently deletes the comment if "Delete" is clicked in the modal.
+* When logged in the user can edit and delete their comment directly from the comment section. The edit link redirects to an edit form while the delete link triggers a confirmation modal and permanently deletes the comment if "Delete" is clicked in the modal.
 * To add a comment, the user can click on the "Leave a comment" button and will be redirected to the add comment page and fill a simple form. Once the form is filled and the user clicked the "Submit" button, they will be redirected to the blog page.
 
 4. Blog management:
 * If the user is logged in as an admin, they will have the possibility to navigate to the Blog management page (through the profile dropdown menu in the main navigation bar) and have the possibility to add a blog post to the blog page/database by filling the add blog post form. Images can be selected directly from the user's computer and not only as URL linked images.
-* The admin only can edit and/or delete any blog post by navigating by a blog detail page and click on the edit/delete links.The edit link  redirects to a edit form while the delete link throws a confirmation modal and deletes the post forever if "Delete" is clicked in the modal.
+* Only the admins can edit and/or delete any blog post by navigating to a blog detail page and clicking on the edit/delete links. The edit link redirects to an edit form while the delete link throws a confirmation modal and deletes the post forever if "Delete" is clicked in the modal.
 
 **Contact App**
 
@@ -326,7 +326,7 @@ Here is my palette :
 
 * This feature allows the user to contact the website's admin and send queries.
 
-* The Contact page allows the user to send a written query to the admin. The query is stored in the database and two email alerts are sent: one to the user to confirm that the message was received and one to the admin to signal the reception of a new query. The alert sent to the admin contains all informations given by the user in the contact form.
+* The Contact page allows the user to send a written query to the admin. The query is stored in the database and two email alerts are sent: one to the user to confirm that the message was received and one to the admin to signal the reception of a new query. The alert sent to the admin contains all information given by the user in the contact form.
 * The user does not need to be a registered user to send a query.
 
 All features have been manually tested, [**please click here to access the testing document**](TESTING.md)
@@ -351,7 +351,7 @@ All features have been manually tested, [**please click here to access the testi
 * Python3
 * Git for version control.
 * Stripe (account, test keys and webhooks) as a secure payment platform.
-* AWS cloud storage  and an S3 bucket for online backup of static files.
+* AWS cloud storage and an S3 bucket for online backup of static files.
 * Email account, I used Gmail.
 
 <a name="locald"></a>
@@ -498,7 +498,7 @@ git push
 
 **6. Install Heroku CLI and login**
 
-* In case your environment doesn't have it already, run this command to install the Heroku CLI  in your terminal:
+* In case your environment doesn't have it already, run this command to install the Heroku CLI in your terminal:
 
 ``````
 $ heroku login

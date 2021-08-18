@@ -87,12 +87,12 @@
                 <div class="pt-4 pb-4">
                     {% if blogpost.comments.count > 0 %}
                         {% for comment in blogpost.comments.all %}
-                            <div class="row align-items-start comment-detail">
+                            <div class="row align-items-start comment-detail mt-3">
                                 <div class="col-4">
                                     <h6 class="mb-1 text-full">{{ comment.comment_user }}</h6>
                                     <p class="text-gray text-full">{{ comment.date }}</p>
                                 </div>
-                                <div class="col-8">
+                                <div class="col-8 pl-3">
                                     <h4 class="mb-3 text-full">
                                         {{ comment.comment_title }}
                                     </h4>
@@ -107,7 +107,6 @@
                                     {% endif %}
                                 </div>
                             </div>
-                        </div>
 
                         <!-- Delete review modal -->
                         <div class="modal fade" id="deleteComment-{{ comment.id }}" tabindex="-1" aria-labelledby="deleteCLabel-{{ comment.id }}" aria-hidden="true">
@@ -118,22 +117,21 @@
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
-                                        </div>
-                                        <div class="modal-body text-full">
-                                            <p>Are you sure that your want to delete your comment? This action cannot be undone.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
-                                            <a href="{% url 'delete_comment' comment.id %}" class="btn btn-danger ml-3">Delete</a>
-                                        </div>
+                                    </div>
+                                    <div class="modal-body text-full">
+                                        <p>Are you sure that your want to delete your comment? This action cannot be undone.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                                        <a href="{% url 'delete_comment' comment.id %}" class="btn btn-danger ml-3">Delete</a>
                                     </div>
                                 </div>
                             </div>
-                        {% endfor %}
-                    {% else %}
-                        <p>No comments yet.</p>
-                    {% endif %}
-                <hr>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No comments yet.</p>
+                {% endif %}
             </div>
         </div>
     </div>

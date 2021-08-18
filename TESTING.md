@@ -20,11 +20,13 @@
 <a name="validation"></a>
 ## Validation ## 
 ---
+This project was test on several devices such as: Iphone 6S, Samsung Galaxy S4, Macbook Air 13", Ipad Pro and Ipad Mini. It was tested on several web browser such as Google Chrome, Firefox and Safari.
+
+I also asked my friends and family to report any bugs while testing it and used Google Chrome DevTools to do further testing.
 
 **HTML**
 
-I used the [**W3C Markup Validator Service**](https://validator.w3.org/) to validate all the HTML of my templates.
-It raised the following issues:
+I used the [**W3C Markup Validator Service**](https://validator.w3.org/) to validate all the HTML of my templates and it passed all tests.
 
 **CSS**
 

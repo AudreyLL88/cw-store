@@ -18,8 +18,6 @@
         * [Colors](#colors)
         * [Fonts](#fonts)
         * [Icons](#icons)
-    * [Stripe Functionnality](#stripe)
-    * [Database Schema](#dbscheme)
     * [Defensive Design](#defensivedesign)
 * [Technologies](#technologies)
     * [Languages and Frameworks](#landf)
@@ -60,11 +58,11 @@ Please [**click here**](https://docs.google.com/spreadsheets/d/1Jjwrl0Z5zI8jjJYm
 * To sell merchandise associated with the artist Chelsea Wolfe.
 * To match the design and atmosphere of the artist and offer a website that is easy to navigate and free of confusion.
 * To become another source of revenue for the music artist.
-* To become a plateform where fans can support the artist and subscribe to a newsletter.
+* To become a plateform where fans can support the artist and follow the artist's news on the blog.
 * To allow users to leave reviews on products to control product quality and popularity.
 * To create a stock of products to be sold online and keep track of the sales as an admin.
-* To be able to crete/update/delete products and their infomations as an admin
-* To enable users to create an account for future purchases and access to special discounts.
+* To be able to create/update/delete products and their infomations as an admin
+* To enable users to create an account for future purchases.
 
 #### User Goals ####
 
@@ -74,6 +72,8 @@ Please [**click here**](https://docs.google.com/spreadsheets/d/1Jjwrl0Z5zI8jjJYm
 * To receive a confirmation email with all relevant informations.
 * To be able to create/update/delete my personal informations.
 * To see a history of my previous purchases.
+* To leave a review of a previously bought product and leave comments on the blog.
+* To contact customer services through the website.
 
 <a name="Scope"></a>
 ### Scope ### 
@@ -89,24 +89,13 @@ The users should be able to conduct the following actions on the website:
 * Purchase products securely through a payment platform.
 * Subscribe to the newsletter.
 * Create/Update/Save/Delete their profile account with personal informations.
-* Read reviews as guest users, post reviews as registered users.
+* Read reviews/comments as guest users, post reviews/comments as registered users.
 
 As an Admin:
 * Add, edit, delete a product and its informations.
 * Delete reviews that do not meet website policies.
 * Create/Update sales product and special prices.
 
-
-<a name="Structure"></a>
-
-### Structure ###
-
-I used the online tool [**Gloomap**]() to create the map below referring to the structure of the website as in deffirent scenarios.
-* The cases in **white** refer to a possible structure from a guest user.
-* The cases in **green** refer to a possible structure from a registered user.
-* The cases in **yellow** refer to a possible structure from an admin.
-
-Click here to open the map in full or check the image below.
 
 <a name="wireframes"></a>
 
@@ -140,21 +129,13 @@ Here is my palette :
 
 ### Fonts ###
 
-* I wanted to fit the minimal but gothic aesthetic of the website by pairing a bold gothic font for the titles with a lighter and elegant font for all other text content. I chose the Google Fonts pairing of the bold [**Pirata One**]() and the sans-serif [**Raleway**]() to match the contrast I wanted to create and found it aethetically pleasing.
+* I wanted to fit the minimal but gothic aesthetic of the website by pairing a bold gothic font for the titles with a lighter and elegant font for all other text content. I chose the Google Fonts pairing of the bold [**Pirata One**] and the sans-serif [**Raleway**] to match the contrast I wanted to create and found it aesthetically pleasing.
 
 <a name="icons"></a>
 
 ### Icons ###
 
 * All icons on this project are taken from the library  [**FontAwesome**](https://fontawesome.com/)
-* The Favicon was made using [**Favicon**](https://favicon.io/) online tool with one of the old Chelsea Wolfe logo used on her patches and pins in the store.
-
-
-<a name="dbscheme"></a>
-
-### Database Scheme ###
-
-* Following requirements, I created my database structure within the Django Framework. For this I followed the **Boutique Ado** CodeInstitute  mini-project.
 
 
 <a name="defensivedesign"></a>
@@ -348,6 +329,7 @@ Here is my palette :
 * The Contact page allows the user to send a written query to the admin. The query is stored in the database and two email alerts are sent: one to the user to confirm that the message was received and one to the admin to signal the reception of a new query. The alert sent to the admin contains all informations given by the user in the contact form.
 * The user does not need to be a registered user to send a query.
 
+All features have been manually tested, [**please click here to access the testing document**](TESTING.md)
 
 <a name="future"></a>
 

@@ -156,7 +156,6 @@ Here is my palette :
 
 * Following requirements, I created my database structure within the Django Framework. For this I followed the **Boutique Ado** CodeInstitute  mini-project.
 
-I made the following schema with [**QuickDBD**](https://www.quickdatabasediagrams.com/):
 
 <a name="defensivedesign"></a>
 

@@ -114,7 +114,11 @@ Click here to open the map in full or check the image below.
 
 To create the wireframes for this project, I used the tool [**Balsamiq**](https://balsamiq.com/). I initially wanted to use Figma but was a bit lost in the process.
 
-Click here to discover the wireframes.
+[**Click here to discover the Wireframes**](README_IMG/wireframe_ms4.pdf)
+
+* As you can see in the wireframes, I initially wanted to have a ticketing plateform but decided to replace it by a blog.
+* I also removed the about page after talking with my mentor.
+* I changed a few things (number of product displayed per row...) for aesthetics reasons.
 
 <a name="design"></a>
 

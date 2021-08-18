@@ -113,7 +113,7 @@ def product_detail(request, product_id):
         for review in reviews:
             average_rating += review.rating
 
-        average_rating = float(average_rating) / float(len(reviews))
+        average_rating = round(float(average_rating) / float(len(reviews)), 1)
     else:
         average_rating = 'N/A'
 
